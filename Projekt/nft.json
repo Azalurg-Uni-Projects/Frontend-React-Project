@@ -1,0 +1,49 @@
+{
+	"nfts":[
+		{
+			"id":1,
+			"author_id":1,
+			"owner_id":1,
+			"colection_id":1,
+			"name":"Hong Kong Spring",
+			"created_date":"2020-12-02",			
+			"price":1.2,
+			"currency":"ETH",			
+			"image_url":"https://lh3.googleusercontent.com/qFqqt3LaXgR2wvJxAT0mdGwFbm0s2YqsW29f9orezXSNFSJosGtLgWsUw1Tn-t_8MHqZ52OTGaFI_7wENBpVHwilTnj7iiegcw4lKA=w600",
+			"url":"https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/51038767389134457626930617169090287934471579480777975785156342561214220468225",
+			"description":"This image was shot in Hong Kong while hiking towards Lion Rock. This was my first time climbing this mountain, in fact it was my first time in Hong Kong and it was one of the most humid experiences I have ever had. Halfway through I had to take off my shirt since it was so sweaty; however, as I neared the peak I came across this view and upon taking it, I knew that it was worth the entire journey. It was taken with a special infrared camera, which works best on a sunny day."
+		}
+	]
+	
+	"collections":[
+		{
+			"id":1,
+			"author_id":1,
+			"name":"Dreamstates",
+			"created_date":"2020-12-01",
+			"nfts_id":[1],
+			"url":"https://opensea.io/collection/dreamstates?tab=activity"
+		
+		}
+	]
+	
+	"users":[
+		{
+			"id":1,
+			"nickname":"Rick",
+			"name":{
+				"firstname":"Rick", 
+				"lastname":"Sanchez"
+				},
+			"place_of_origin":"Earth (Dimension C-137)",
+			"birthday":"1950-09-11",
+			"join_date":"2020-11-28",
+			"created_collections_id":[1],
+			"colected_nfts_id":[1],
+			"created_nfts_id":[1],
+			"logo_url":"https://static.wikia.nocookie.net/rickandmorty/images/a/a6/Rick_Sanchez.png/revision/latest/scale-to-width-down/848?cb=20160923150728"
+			"description":"What, so everyone’s supposed to sleep every single night now? You realize that nighttime makes up half of all time?"
+		
+		}
+	]
+}
