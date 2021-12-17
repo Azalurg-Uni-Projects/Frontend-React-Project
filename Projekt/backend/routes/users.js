@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 const Users = require('../models/User');
-const Posts = require('../models/Post');
+const Posts = require('../models/Nft');
 
 router.get('/', async (req, res) => {
   Users
@@ -11,29 +11,26 @@ router.get('/', async (req, res) => {
     .catch(err => res.status(500).json(err));
 });
 
-router.get('/registration-raport/:date', async (req, res) => {
-  try {
-    const result = await Users.aggregate([
-      { $match: { 'registrationDate': { '$gte': new Date(req.params.date) } } },
-      { $group: { _id: { $dateToString: { format: "%Y-%m-%d", date: '$registrationDate' } }, count: { $sum: 1 } } },
-      { $addFields: { date: '$_id' } },
-      { $project: { _id: false } }
-    ]);
-    return res.json(result)
-  } catch (err) {
-    return res.json(err)
-  }
-})
-
 router.post('/', async (req, res) => {
   console.log(req.body)
-
   const today = new Date()
-
+  
   const user = new Users({
-    login: req.body.login,
+    nickname: req.body.nickname,
+    firstname: req.body.firstname,
+    lastname: req.body.lastname,
     email: req.body.email,
-    registrationDate: today
+    phone_number: req.body.phone_number,
+    place_of_origin: req.body.place_of_origin,
+    birthday: req.body.birthday,
+    logo_url: req.body.logo_url,
+    description: req.body.description,
+//------------------------------------------------------    
+    registrationDate: today,
+    created_nft_id: [],
+    colected_nft_id: [],
+    created_collection_id: []
+    
   });
 
   user

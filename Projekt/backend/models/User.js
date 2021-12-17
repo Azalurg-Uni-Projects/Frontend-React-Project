@@ -8,13 +8,15 @@ const userSchema = new Schema({
     email: {type: String, require: true, unique: true},
     phone_number: String,
     place_of_origin: String,
+    logo_url: String,
+    description: String,
     birthday: Date,
+//-----------------------------------------------------------
     registrationDate: {type: Date, require: true},
     created_nft_id: [{type: Schema.Types.ObjectID, ref: "Nft"}],
     colected_nft_id: [{type: Schema.Types.ObjectID, ref: "Nft"}],
-    created_collection_id: [{type: Schema.Types.ObjectID, ref: "Collection"}],
-    logo_url: String,
-    description: String
+    created_collection_id: [{type: Schema.Types.ObjectID, ref: "Collection"}]
+    
 });
 
 module.exports = model('User', userSchema);

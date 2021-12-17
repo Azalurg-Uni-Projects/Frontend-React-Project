@@ -1,6 +1,6 @@
 const { Schema, model } = require('mongoose');
 
-const postSchema = new Schema({
+const nftSchema = new Schema({
     author_id: {type: Schema.Types.ObjectID, ref: "User", require: true},
     owner_id: {type: Schema.Types.ObjectID, ref: "User", require: true},
     collection_id: {type: Schema.Types.ObjectID, ref: "Collection"},
@@ -14,4 +14,4 @@ const postSchema = new Schema({
 
 });
 
-module.exports = model('Post', postSchema);
+module.exports = model('Post', nftSchema);

@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router({mergeParams: true});
 
-const Posts = require('../models/Post');
+const Posts = require('../models/Nft');
 const Users = require('../models/User');
 
 
