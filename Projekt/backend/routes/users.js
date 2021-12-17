@@ -2,13 +2,21 @@ const express = require('express');
 const router = express.Router();
 
 const Users = require('../models/User');
-const Posts = require('../models/Nft');
 
 router.get('/', async (req, res) => {
   Users
     .find()
     .then(ans => res.json(ans))
     .catch(err => res.status(500).json(err));
+});
+
+router.get('/:idUser', async (req, res) => {
+  const id = req.params.idUser
+
+  Users
+    .findById(id)
+    .then(ans => res.json(ans))
+    .catch(err => res.status(500).json(err))
 });
 
 router.post('/', async (req, res) => {
@@ -32,29 +40,10 @@ router.post('/', async (req, res) => {
     created_collection_id: []
     
   });
-
   user
     .save()
     .then(ans => res.json(ans))
     .catch(err => res.status(500).json(err));
-});
-
-router.get('/:idUser', async (req, res) => {
-  const id = req.params.idUser
-
-  Users
-    .findById(id)
-    .then(ans => res.json(ans))
-    .catch(err => res.status(500).json(err))
-});
-
-router.put('/:idUser', async (req, res) => {
- const id = req.params.idUser;
-
-Users
-  .findOneAndReplace({_id: id}, {...req.body})
-  .then(ans => res.json(ans))
-  .catch(err => res.status(500).json(err))
 });
 
 router.delete('/:idUser', async (req, res) => {

@@ -5,6 +5,7 @@ const collectionSchema = new Schema({
     name: {type: String, require: true, unique: true},
     created_date: Date,
     nft_id: [{type: Schema.Types.ObjectID, ref: "Nft"}],
+    img_url: String,
     url: String
 });
 

@@ -1,13 +1,15 @@
 const express = require('express');
 const app = express();
 const users = require('./routes/users');
-const posts = require('./routes/posts');
+const nfts = require('./routes/nfts');
+const collections = require('./routes/collections')
 
 app.use(express.json());
 
 // „Podłączamy” obsługę „endpointów”, które zdefiniowaliśmy dla kolekcji 'users' w katalogu routes/users.js
 app.use('/users', users);
-app.use('/posts', posts);
+app.use('/nfts', nfts);
+app.use('/collection', collections)
 
 require('dotenv').config();
 const dbConnData = {
