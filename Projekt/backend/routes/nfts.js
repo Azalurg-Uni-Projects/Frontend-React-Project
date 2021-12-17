@@ -29,9 +29,10 @@ router.post('/:author_id', async (req, res) => {
   const nft = new Nft({
     author_id: id,
     owner_id: id,
-    collection_id: null,
-    title: req.body.title,
     created_date: today,
+    collection_id: null,
+
+    title: req.body.title,
     price: req.body.price,
     currency: req.body.currency,
     image_url: req.body.image_url,

@@ -9,7 +9,7 @@ app.use(express.json());
 // „Podłączamy” obsługę „endpointów”, które zdefiniowaliśmy dla kolekcji 'users' w katalogu routes/users.js
 app.use('/users', users);
 app.use('/nfts', nfts);
-app.use('/collection', collections)
+app.use('/collections', collections)
 
 require('dotenv').config();
 const dbConnData = {

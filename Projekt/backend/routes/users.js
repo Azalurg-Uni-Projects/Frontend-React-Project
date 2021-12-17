@@ -10,8 +10,8 @@ router.get('/', async (req, res) => {
     .catch(err => res.status(500).json(err));
 });
 
-router.get('/:idUser', async (req, res) => {
-  const id = req.params.idUser
+router.get('/:user_id', async (req, res) => {
+  const id = req.params.user_id
 
   Users
     .findById(id)
@@ -24,6 +24,11 @@ router.post('/', async (req, res) => {
   const today = new Date()
   
   const user = new Users({
+    registration_date: today,
+    created_nft_id: [],
+    colected_nft_id: [],
+    created_collection_id: [],
+    
     nickname: req.body.nickname,
     firstname: req.body.firstname,
     lastname: req.body.lastname,
@@ -32,13 +37,7 @@ router.post('/', async (req, res) => {
     place_of_origin: req.body.place_of_origin,
     birthday: req.body.birthday,
     logo_url: req.body.logo_url,
-    description: req.body.description,
-//------------------------------------------------------    
-    registrationDate: today,
-    created_nft_id: [],
-    colected_nft_id: [],
-    created_collection_id: []
-    
+    description: req.body.description
   });
   user
     .save()
@@ -46,20 +45,17 @@ router.post('/', async (req, res) => {
     .catch(err => res.status(500).json(err));
 });
 
-router.delete('/:idUser', async (req, res) => {
-  const id = req.params.idUser;
+router.delete('/:user_id', async (req, res) => {
+  const id = req.params.user_id;
   
   Users
     .findByIdAndDelete(id)
-    .then(ans => {
-      ans.posts.map(post => Posts.findByIdAndDelete(post))
-      res.json(ans)
-    })
+    .then(ans => res.json(ans))
     .catch(err => res.status(500).json(err))
 });
 
-router.patch('/:idUser', async (req, res) => {
-  const id = req.params.idUser;
+router.patch('/:user_id', async (req, res) => {
+  const id = req.params.user_id;
 
   Users
     .findByIdAndUpdate(id, {...req.body})

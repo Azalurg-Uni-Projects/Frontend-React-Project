@@ -27,11 +27,12 @@ router.post('/:author_id', async (req, res) => {
   const id = req.params.author_id
   const today = new Date()
 
-  const collection = new Nft({
+  const collection = new Collection({
     author_id: id,
-    name: req.body.name,
     created_date: today,
     nft_id: [],
+
+    name: req.body.name,
     img_url: req.body.img_url,
     url: req.body.url
   })
@@ -49,10 +50,12 @@ router.post('/:author_id', async (req, res) => {
 router.delete('/:id', async (req, res) => {
   const id = req.params.id;
   
-  Nft
+  Collection
     .findByIdAndDelete(id)
     .then(ans =>  res.json(ans))
     .catch(err => res.status(500).json(err))
+
+  
 });
 
 
