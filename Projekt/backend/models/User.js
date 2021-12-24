@@ -9,6 +9,7 @@ const userSchema = new Schema({
     phone_number: String,
     place_of_origin: String,
     logo_url: String,
+    url: String,
     description: String,
     birthday: Date,
 //-----------------------------------------------------------

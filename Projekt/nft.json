@@ -1,49 +1,146 @@
 {
-	"nfts":[
+	"nfts": [
 		{
-			"id":1,
-			"author_id":1,
-			"owner_id":1,
-			"colection_id":1,
-			"name":"Hong Kong Spring",
-			"created_date":"2020-12-02",			
-			"price":1.2,
-			"currency":"ETH",			
-			"image_url":"https://lh3.googleusercontent.com/qFqqt3LaXgR2wvJxAT0mdGwFbm0s2YqsW29f9orezXSNFSJosGtLgWsUw1Tn-t_8MHqZ52OTGaFI_7wENBpVHwilTnj7iiegcw4lKA=w600",
-			"url":"https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/51038767389134457626930617169090287934471579480777975785156342561214220468225",
-			"description":"This image was shot in Hong Kong while hiking towards Lion Rock. This was my first time climbing this mountain, in fact it was my first time in Hong Kong and it was one of the most humid experiences I have ever had. Halfway through I had to take off my shirt since it was so sweaty; however, as I neared the peak I came across this view and upon taking it, I knew that it was worth the entire journey. It was taken with a special infrared camera, which works best on a sunny day."
+			"id": 1,
+			"author_id": 1,
+			"owner_id": 1,
+			"colection_id": 1,
+			"name": "Hong Kong Spring",
+			"created_date": "2020-12-02",			
+			"price": 1.2,
+			"currency": "ETH",			
+			"image_url": "https://lh3.googleusercontent.com/qFqqt3LaXgR2wvJxAT0mdGwFbm0s2YqsW29f9orezXSNFSJosGtLgWsUw1Tn-t_8MHqZ52OTGaFI_7wENBpVHwilTnj7iiegcw4lKA=w600",
+			"url": "https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/51038767389134457626930617169090287934471579480777975785156342561214220468225",
+			"description": "This image was shot in Hong Kong while hiking towards Lion Rock. This was my first time climbing this mountain, in fact it was my first time in Hong Kong and it was one of the most humid experiences I have ever had. Halfway through I had to take off my shirt since it was so sweaty; however, as I neared the peak I came across this view and upon taking it, I knew that it was worth the entire journey. It was taken with a special infrared camera, which works best on a sunny day."
 		}
-	]
+	],
 	
-	"collections":[
+	"collections": [
 		{
-			"id":1,
-			"author_id":1,
-			"name":"Dreamstates",
-			"created_date":"2020-12-01",
-			"nfts_id":[1],
-			"url":"https://opensea.io/collection/dreamstates?tab=activity"
+			"_id": 1,
+			"author_id": 1,
+			"name": "Dreamstates",
+			"created_date": "2021-02-02",
+			"nfts_id": [1, 2, 3, 4, 5],
+			"img_url": "https://lh3.googleusercontent.com/qpH9jCn4XrdqHR1VVV5D01Y8MPFyWCo6-lHck-y2hX3hW1Pu13jz4xmDss6ZfGqjmUDgeirwJ1CqXuut7f_PX4CGio9eNRV4bsOP=h600",
+			"url": "https://opensea.io/collection/dreamstates?tab=activity"
 		
+		},
+		{
+			"_id": 2,
+			"author_id": 2,
+			"name": "CryptoPunks",
+			"created_date": "2017-06-13",
+			"nfts_id": [6, 7, 8, 9, 10],
+			"img_url": "https://lh3.googleusercontent.com/48oVuDyfe_xhs24BC2TTVcaYCX7rrU5mpuQLyTgRDbKHj2PtzKZsQ5qC3xTH4ar34wwAXxEKH8uUDPAGffbg7boeGYqX6op5vBDcbA=h600",
+			"url": "https://opensea.io/collection/cryptopunks"
+		},
+		{
+			"_id": 3,
+			"author_id": 3,
+			"name": "Mutant Ape Yacht Club",
+			"created_date": "2021-09-29",
+			"nfts_id": [11, 12, 13, 14, 15],
+			"img_url": "https://lh3.googleusercontent.com/5c-HcdLMinTg3LvEwXYZYC-u5nN22Pn5ivTPYA4pVEsWJHU1rCobhUlHSFjZgCHPGSmcGMQGCrDCQU8BfSfygmL7Uol9MRQZt6-gqA=h600",
+			"url": "https://opensea.io/collection/mutant-ape-yacht-club"
+		},
+		{
+			"_id": 4,
+			"author_id": 4,
+			"name": "NFT Worlds",
+			"created_date": "2021-09-14",
+			"nfts_id": [16, 17, 18, 19, 20],
+			"img_url": "https://lh3.googleusercontent.com/Z83eH0SKXuR-szAsaFQvoz_mQUshxiEJjrl6nh71-3gOD4U-Z5Crpt2qcwGTf4vltfBWods9VVGDkv436z2_QmKK-Wi7aBrd640l=h600",
+			"url": "https://opensea.io/collection/nft-worlds"
 		}
-	]
+
+	],
 	
-	"users":[
+	"users": [
 		{
-			"id":1,
-			"nickname":"Rick",
-			"name":{
-				"firstname":"Rick", 
-				"lastname":"Sanchez"
-				},
-			"place_of_origin":"Earth (Dimension C-137)",
-			"birthday":"1950-09-11",
-			"join_date":"2020-11-28",
-			"created_collections_id":[1],
-			"colected_nfts_id":[1],
-			"created_nfts_id":[1],
-			"logo_url":"https://static.wikia.nocookie.net/rickandmorty/images/a/a6/Rick_Sanchez.png/revision/latest/scale-to-width-down/848?cb=20160923150728"
-			"description":"What, so everyone’s supposed to sleep every single night now? You realize that nighttime makes up half of all time?"
-		
+			"_id": 1,
+			"nickname": "Noealzii",
+			"firstname": "Sang-Hun", 
+			"lastname": "Park",
+			"place_of_origin": "Seoul",
+			"email": "noealzii@example.com",
+			"phone_number": 551555246,
+			"birthday": "1991-09-26",
+			"join_date": "2021-02-01",
+			"created_collections_id": [1],
+			"colected_nfts_id": [13, 11, 7],
+			"created_nfts_id": [1, 2, 3, 4, 5],
+			"url": "https://opensea.io/Noealzii",
+			"logo_url": "https://lh3.googleusercontent.com/JbvWs8J7RjXjq_ois27TEU9L_Z5L_24XZ20uaJJdY2NxIr-K1W9pe-GCU3FQBH6oGpfoOdpoNkPc2gMiUvdFdmwUxeMlKCUJO--k=s0",
+			"description": "A photographer living in Seoul. I like marking art through photography."
+		},
+		{
+			"_id": 2,
+			"nickname": "C352B5",
+			"firstname": "Unnamed", 
+			"lastname": "Unnamed",
+			"place_of_origin": "0xc352b534e8b987e036a93539fd6897f53488e56a",
+			"email": "c352b5@example.com",
+			"phone_number": 455155451,
+			"birthday": "1983-04-15",
+			"join_date": "2017-01-01",
+			"created_collections_id": [2],
+			"colected_nfts_id": [30, 10],
+			"created_nfts_id": [10, 6, 7, 8, 9],
+			"url": "https://opensea.io/0xc352b534e8b987e036a93539fd6897f53488e56a",
+			"logo_url": "https://storage.googleapis.com/opensea-static/opensea-profile/22.png",
+			"description": "---"
+		},
+		{
+			"_id": 3,
+			"nickname": "9056D1",
+			"firstname": "Unnamed", 
+			"lastname": "Unnamed",
+			"place_of_origin": "0x9056d15c49b19df52ffad1e6c11627f035c0c960",
+			"email": "9056d1@example.com",
+			"phone_number": 551491111,
+			"birthday": "1995-07-20",
+			"join_date": "2021-08-03",
+			"created_collections_id": [3],
+			"colected_nfts_id": [15, 1, 3, 4],
+			"created_nfts_id": [15, 11, 12, 13, 14],
+			"url": "https://opensea.io/0x9056d15c49b19df52ffad1e6c11627f035c0c960",
+			"logo_url": "https://storage.googleapis.com/opensea-static/opensea-profile/13.png",
+			"description": "***"
+		},
+		{
+			"_id": 4,
+			"nickname": "NFTWorldsVault",
+			"firstname": "Arseniy", 
+			"lastname": "Lagunov",
+			"place_of_origin": "Minecraft",
+			"email": "arseniy@example.com",
+			"phone_number": 625625625,
+			"birthday": "1993-09-12",
+			"join_date": "2021-09-13",
+			"created_collections_id": [4],
+			"colected_nfts_id": [16],
+			"created_nfts_id": [19, 16, 17, 18, 20],
+			"url": "https://opensea.io/NFTWorldsVault",
+			"logo_url": "https://lh3.googleusercontent.com/SCTHL6t1OjlvebHOXHTqcW0zr3iUUUbfonwuW6bivugEJ_8tnF95LrEjnn0mB_apRoZOeUx2ICi-GE6I-n3bu7VzR8n10A1tKzk3Qg=s0",
+			"description": "World holding vault for NFT Worlds. Worlds are held for promotions, giveaways, donations and more."
+		},
+		{
+			"_id": 4,
+			"nickname": "NFTWorldsVault",
+			"firstname": "Arseniy", 
+			"lastname": "Lagunov",
+			"place_of_origin": "Minecraft",
+			"email": "arseniy@example.com",
+			"phone_number": 625625625,
+			"birthday": "1993-09-12",
+			"join_date": "2021-09-13",
+			"created_collections_id": [4],
+			"colected_nfts_id": [16],
+			"created_nfts_id": [19, 16, 17, 18, 20],
+			"url": "https://opensea.io/NFTWorldsVault",
+			"logo_url": "https://lh3.googleusercontent.com/SCTHL6t1OjlvebHOXHTqcW0zr3iUUUbfonwuW6bivugEJ_8tnF95LrEjnn0mB_apRoZOeUx2ICi-GE6I-n3bu7VzR8n10A1tKzk3Qg=s0",
+			"description": "World holding vault for NFT Worlds. Worlds are held for promotions, giveaways, donations and more."
 		}
 	]
 }
