@@ -15,6 +15,7 @@ router.get('/:user_id', async (req, res) => {
 
   Users
     .findById(id)
+    .populate("created_nft_id")
     .then(ans => res.json(ans))
     .catch(err => res.status(500).json(err))
 });

@@ -314,6 +314,7 @@
 			"phone_number": 551555246,
 			"birthday": "1991-09-26",
 			"join_date": "2021-02-01",
+			"created_collections_id": ["61c65b95a5665cf8e0000001"],
 			"colected_nfts_id": ["61c65942d86cd8a490000007", "61c65942d86cd8a490000011", "61c65942d86cd8a490000013"],
 			"created_nfts_id": ["61c65942d86cd8a490000001", "61c65942d86cd8a490000002", "61c65942d86cd8a490000003", "61c65942d86cd8a490000004", "61c65942d86cd8a490000005"],
 			"url": "https://opensea.io/Noealzii",

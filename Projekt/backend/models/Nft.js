@@ -14,4 +14,4 @@ const nftSchema = new Schema({
 
 });
 
-module.exports = model('Post', nftSchema);
+module.exports = model('Nft', nftSchema);
