@@ -1,0 +1,105 @@
+body{
+  text-align: center;
+  color: #C5C6C7;
+  background: #0B0C10;
+  font-size: 16px;
+}
+
+h1, h2, h3, h4{
+  color: #66fcf1;
+}
+
+button, .bntLink {
+  background-color: #00000000; 
+  border: 2px solid #24A29E;
+  color: #C5C6C7;
+  font-size: 16px;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  margin: 4px 2px;
+}
+
+button:hover, .bntLink:hover {
+  background-color: #24A29E;
+  color: #C5C6C7;
+}
+
+input{
+  color: #C5C6C7;
+  background-color: #1F2833;
+  border: 2px solid #24A29E;
+  font-size: 16px;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+}
+
+input:focus {
+  background-color: #1F2833
+}
+
+.List{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly
+}
+.ListContainer{
+  padding: 10px 40px;
+  border: 1px solid #24A29E;
+  margin-bottom: 20px
+}
+.ListContainer > button{ 
+  display: inline-block
+}
+
+
+
+ul{
+  list-style-type: none;
+  display: flex;
+  justify-content: center
+}
+
+.box{
+  width:50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.detailsList{
+  display: list-item;
+  text-align:left
+}
+
+.delete:hover{
+  background-color:rgb(131, 20, 20)
+}
+
+.Logo{
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .Logo{
+    animation: App-logo-float infinite 0.8s ease-in-out;
+  }
+}
+
+@keyframes App-logo-float {
+  0% {
+    transform: rotate(0);
+  }
+  99% {
+    transform: rotate(-360deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
