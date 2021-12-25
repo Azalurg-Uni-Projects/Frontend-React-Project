@@ -9,7 +9,7 @@ import {
 import Restart from './ui/restart.js';
 import Dashboard from './ui/dashboard.js'
 import UserList from './ui/users/UserList';
-import ProductList from './ui/products/ProductList';
+import NftList from './ui/nfts/NftList';
 
 
 function App() {
@@ -28,12 +28,12 @@ function App() {
               <Link to="/users" className="bntLink">Users</Link>
             </li>
             <li>
-              <Link to="/products" className="bntLink">Products</Link>
+              <Link to="/nfts" className="bntLink">Nfts</Link>
             </li>
           </ul>
         </nav>
       <Switch>
-        <Route path="/products"><ProductList/></Route>
+        <Route path="/nfts"><NftList/></Route>
         <Route path="/users"><UserList/></Route>
 
         <Route path="/dashboard"><Dashboard /></Route>
