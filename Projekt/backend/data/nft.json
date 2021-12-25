@@ -243,8 +243,8 @@
 			"created_date": "2021-11-16",			
 			"price": 100,
 			"currency": "ETH",			
-			"image_url": "https://opensea.io/assets/0xbd4455da5929d5639ee098abfaa3241e9ae111af/1868",
-			"url": "https://lh3.googleusercontent.com/9mUEla0THHbuY2OqIc8FeAmFQNHuKDJO8-MmBk6-9MsjPUd0KZLb36X-0WAMjddqNYGbFaM7euWQ9r6LRJBk0Lzjo8JhAHNckVZKJw=w600",
+			"image_url": "https://lh3.googleusercontent.com/9mUEla0THHbuY2OqIc8FeAmFQNHuKDJO8-MmBk6-9MsjPUd0KZLb36X-0WAMjddqNYGbFaM7euWQ9r6LRJBk0Lzjo8JhAHNckVZKJw=w600",
+			"url": "https://opensea.io/assets/0xbd4455da5929d5639ee098abfaa3241e9ae111af/1868",
 			"description": "NFT Worlds are generative worlds with geography, resource & feature data stored on chain. NFT Worlds can be played, explored and built in. You can sync changes you make to your world so they reflect on your NFT. Feel free to use NFT Worlds in any way you want. Learn more at nftworlds.com"
 		},
 		{
