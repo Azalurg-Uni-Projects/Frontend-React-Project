@@ -13,7 +13,7 @@ const userSchema = new Schema({
     description: String,
     birthday: Date,
 //-----------------------------------------------------------
-    registration_date: {type: Date, require: true},
+    join_date: {type: Date, require: true},
     created_nft_id: [{type: Schema.Types.ObjectID, ref: "Nft"}],
     colected_nft_id: [{type: Schema.Types.ObjectID, ref: "Nft"}],
     created_collection_id: [{type: Schema.Types.ObjectID, ref: "Collection"}]

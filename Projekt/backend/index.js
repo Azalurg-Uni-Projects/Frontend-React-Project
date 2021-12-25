@@ -3,6 +3,7 @@ const app = express();
 const users = require('./routes/users');
 const nfts = require('./routes/nfts');
 const collections = require('./routes/collections')
+const admin = require('./routes/admin')
 
 app.use(express.json());
 
@@ -10,6 +11,7 @@ app.use(express.json());
 app.use('/users', users);
 app.use('/nfts', nfts);
 app.use('/collections', collections)
+app.use('/admin', admin)
 
 require('dotenv').config();
 const dbConnData = {
