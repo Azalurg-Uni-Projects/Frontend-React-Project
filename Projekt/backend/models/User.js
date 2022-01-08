@@ -12,12 +12,7 @@ const userSchema = new Schema({
     url: String,
     description: String,
     birthday: Date,
-//-----------------------------------------------------------
-    join_date: {type: Date, require: true},
-    created_nft_id: [{type: Schema.Types.ObjectID, ref: "Nft"}],
-    colected_nft_id: [{type: Schema.Types.ObjectID, ref: "Nft"}],
-    created_collection_id: [{type: Schema.Types.ObjectID, ref: "Collection"}]
-    
+    join_date: {type: Date, require: true}
 });
 
 module.exports = model('User', userSchema);
