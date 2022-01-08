@@ -15,7 +15,6 @@ router.get('/:user_id', async (req, res) => {
 
   Users
     .findById(id)
-    .populate(["created_nft_id", "colected_nft_id", "created_collection_id"])
     .then(ans => res.json(ans))
     .catch(err => res.status(500).json(err))
 });
@@ -24,22 +23,20 @@ router.post('/', async (req, res) => {
   console.log(req.body)
   const today = new Date()
   
-  const user = new Users({
-    registration_date: today,
-    created_nft_id: [],
-    colected_nft_id: [],
-    created_collection_id: [],
-    
+  const user = new Users({  
     nickname: req.body.nickname,
     firstname: req.body.firstname,
     lastname: req.body.lastname,
     email: req.body.email,
     phone_number: req.body.phone_number,
     place_of_origin: req.body.place_of_origin,
-    birthday: req.body.birthday,
     logo_url: req.body.logo_url,
-    description: req.body.description
+    url: req.body.url,
+    birthday: req.body.birthday,
+    description: req.body.description,
+    registration_date: today
   });
+
   user
     .save()
     .then(ans => res.json(ans))
@@ -50,20 +47,8 @@ router.delete('/:user_id', async (req, res) => {
   const id = req.params.user_id;
   
   Users
-    .findById(id)
-    .then(user => {
-      if (user["created_nft_id"][0] == null &&
-        user["colected_nft_id"][0] == null &&
-        user["created_collection_id"][0] == null){
-          Users
-          .findByIdAndDelete(id)
-          .then(ans =>  res.json(ans))
-          .catch(err => res.status(500).json(err))
-        }
-      else{
-        res.status(500).send("one of the arrays is not empty");
-      }
-    })
+    .findByIdAndDelete(id)
+    .then(ans =>  res.json(ans))
     .catch(err => res.status(500).json(err))
 });
 

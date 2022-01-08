@@ -1,6 +1,6 @@
-# Backend
+# <s> Backend </s>
 
-## Users
+## <s> Users </s>
 
 - <s> Get one </s>
 - <s> Get all </s>
@@ -8,23 +8,23 @@
 - <s> Edit (put) </s>
 - <s> Delete one </s>
 
-## Nfts
+## <s> Nfts </s>
 
 - <s> Get one </s>
 - <s> Get all </s>
-- Post new
-- Edit (put)
-- Delete one
+- <s> Post new </s>
+- <s> Edit (put) </s>
+- <s> Delete one </s>
 
-## Collections
+## <s> Collections </s>
 
-- Get one
+- <s> Get one </s>
 - <s> Get all </s>
-- Post new
-- Edit (put)
-- Delete one
+- <s> Post new </s>
+- <s> Edit (put) </s>
+- <s> Delete one </s>
 
-## Admin
+## <s> Admin </s>
 
 - <s> Delete all </s>
 - <s> Reload data </s>

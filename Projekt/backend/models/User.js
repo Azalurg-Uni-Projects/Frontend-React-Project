@@ -12,7 +12,7 @@ const userSchema = new Schema({
     url: String,
     description: String,
     birthday: Date,
-    join_date: {type: Date, require: true}
+    registration_date: {type: Date, require: true}
 });
 
 module.exports = model('User', userSchema);
