@@ -1,9 +1,7 @@
 import { connect } from "react-redux"; 
-import { getCollections } from "../../ducks/collections copy/selectors";
+import { getCollections } from "../../ducks/collections/selectors";
 
 const CollectionList = ({ collections, getCollectionList } ,props) => {
-
-    
 
     return(
         <div>
@@ -11,8 +9,8 @@ const CollectionList = ({ collections, getCollectionList } ,props) => {
             <div className="List">
                 {collections ? collections.map(collection =>(
                     <div key={collection._id} className="ListContainer">
-                    <img className="Small-img" src={collection.image_url} alt = "COLLECTION NOT FOUND"/>
-                    <p>{collection.title}</p>
+                    <img className="Small-img" src={collection.img_url} alt = "COLLECTION NOT FOUND"/>
+                    <p>{collection.name}</p>
                     </div>
                 )) : <div>No one here</div>}
             </div>

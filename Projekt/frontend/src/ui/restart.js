@@ -5,12 +5,15 @@ import {connect } from "react-redux";
 import { getUsers } from "../ducks/users/selectors";
 import { getNfts } from "../ducks/nfts/selectors";
 import { getNftsList } from "../ducks/nfts/operations";
+import { getCollections } from "../ducks/collections/selectors";
+import { getCollectionsList } from "../ducks/collections/operations"
 
-const Restart = ({history, getUserList, getNftsList }, props) => {
+const Restart = ({history, getUserList, getNftsList, getCollectionsList }, props) => {
     
     useEffect(async () =>{
         await getUserList();
         await getNftsList();
+        await getCollectionsList()
         history.push("dashboard")
     }, [])
 
@@ -25,12 +28,14 @@ const Restart = ({history, getUserList, getNftsList }, props) => {
 const mapStateToProps = (state) => {
     return {
         users: getUsers(state),
-        nfts: getNfts(state)
+        nfts: getNfts(state),
+        collections: getCollections(state)
     };
 }
 const mapDispatchToProps = {
     getUserList,
-    getNftsList
+    getNftsList,
+    getCollectionsList
 }
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Restart));

@@ -10,7 +10,7 @@ import Restart from './ui/restart.js';
 import Dashboard from './ui/dashboard.js'
 import UserList from './ui/users/UserList';
 import NftList from './ui/nfts/NftList';
-
+import CollectionList from './ui/collections/CollectionList';
 
 function App() {
   return (
@@ -30,9 +30,13 @@ function App() {
             <li>
               <Link to="/nfts" className="Btn">Nfts</Link>
             </li>
+            <li>
+              <Link to="/collections" className="Btn">Collections</Link>
+            </li>
           </ul>
         </nav>
       <Switch>
+        <Route path="/collections"><CollectionList/></Route>
         <Route path="/nfts"><NftList/></Route>
         <Route path="/users"><UserList/></Route>
 
