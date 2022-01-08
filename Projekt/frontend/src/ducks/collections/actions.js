@@ -1,11 +1,11 @@
 import types from './types';
 
-export const nftListAction = (nft) => ({
-    type: types.NFT_LIST,
-    payload: nft
+export const collectionListAction = (collection) => ({
+    type: types.COLLECTION_LIST,
+    payload: collection
 });
 
-export const nftCreateAction = (newNft) => ({
-    type: types.NFT_CREATE,
-    payload: newNft
+export const collectionCreateAction = (newCollection) => ({
+    type: types.COLLECTION_CREATE,
+    payload: newCollection
 });

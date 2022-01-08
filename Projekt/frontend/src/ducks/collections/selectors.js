@@ -1,1 +1,1 @@
-export const getNfts = (state) => state.nfts;
+export const getCollections = (state) => state.collections;

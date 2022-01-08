@@ -1,10 +1,10 @@
 import types from "./types";
 
-export const nftReducer = (state = [], action) => {
+export const collectionReducer = (state = [], action) => {
     switch(action.type) {
-        case types.NFT_LIST: 
+        case types.COLLECTION_LIST: 
             return [...action.payload]
-        case types.NFT_CREATE:
+        case types.COLLECTION_CREATE:
             return [...state, action.payload]; 
         default:
             return state;

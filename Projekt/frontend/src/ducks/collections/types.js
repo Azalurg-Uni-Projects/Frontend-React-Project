@@ -1,11 +1,11 @@
-const NFT_LIST = 'NFT_LIST';
-const NFT_CREATE = 'NFT_CREATE';
+const COLLECTION_LIST = 'COLLECTION_LIST';
+const COLLECTION_CREATE = 'COLLECTION_CREATE';
 
 
 
 const types = {
-    NFT_LIST,
-    NFT_CREATE
+    COLLECTION_LIST,
+    COLLECTION_CREATE
 };
 
 export default types;
