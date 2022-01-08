@@ -13,7 +13,7 @@ export const getUserList = () => {
 export const deleteUser = (user) => {
     return async dispatch => {
         const response = await 
-            axios.delete(`http://localhost:5000/users/${user.id}`);
+            axios.delete(`http://localhost:5000/users/${user._id}`);
         dispatch(actions.userDeleteAction(response.data));
     }
 }

@@ -4,17 +4,15 @@ import { deleteUser } from "../../ducks/users/operations"
 
 const UserList = ({ users, deleteUser } ,props) => {
 
-    
-
     return(
         <div>
             <h1>Users List</h1>
             <div className="List">
                 {users ? users.map(user =>(
                     <div key={user._id} className="ListContainer">
-                        <p>nickname: {user.nickname}</p>
-                        <p>name: {user.firstname} {user.lastname}</p>
-                        <button className="delete" onClick={() => deleteUser(user)}>Delete</button>
+                        <img className="Small-img Circle" src={user.logo_url} alt = "USER NOT FOUND"/>
+                        <p>{user.nickname}</p>
+                        <button className="Btn Delete" onClick={() => deleteUser(user)}>Delete</button>
                     </div>
                 )) : <div>No one here</div>}
             </div>

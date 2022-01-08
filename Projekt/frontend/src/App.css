@@ -5,39 +5,13 @@ body{
   font-size: 16px;
 }
 
-h1, h2, h3, h4{
-  color: #66fcf1;
+.Small-img{
+  width: 200px;
+  height: 200px;
 }
 
-button, .bntLink {
-  background-color: #00000000; 
-  border: 2px solid #24A29E;
-  color: #C5C6C7;
-  font-size: 16px;
-  padding: 8px 16px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  transition-duration: 0.4s;
-  cursor: pointer;
-  margin: 4px 2px;
-}
-
-button:hover, .bntLink:hover {
-  background-color: #24A29E;
-  color: #C5C6C7;
-}
-
-input{
-  color: #C5C6C7;
-  background-color: #1F2833;
-  border: 2px solid #24A29E;
-  font-size: 16px;
-  padding: 8px 16px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  margin: 4px 2px;
+.Circle{
+  border-radius: 50%;
 }
 
 input:focus {
@@ -59,8 +33,6 @@ input:focus {
   display: inline-block
 }
 
-
-
 ul{
   list-style-type: none;
   display: flex;
@@ -77,13 +49,48 @@ ul{
   text-align:left
 }
 
-.delete:hover{
-  background-color:rgb(131, 20, 20)
-}
-
 .Logo{
   height: 40vmin;
   pointer-events: none;
+}
+
+h1, h2, h3, h4{
+  color: #66fcf1;
+}
+
+.Btn {
+  background-color: #00000000; 
+  border: 2px solid #24A29E;
+  color: #C5C6C7;
+  font-size: 16px;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  transition-duration: 0.8s;
+  cursor: pointer;
+  margin: 4px 2px;
+}
+
+.Btn:hover {
+  background-color: #24A29E;
+  color: #C5C6C7;
+}
+
+.Delete:hover{
+  background-color:rgb(131, 20, 20)
+}
+
+input{
+  color: #C5C6C7;
+  background-color: #1F2833;
+  border: 2px solid #24A29E;
+  font-size: 16px;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
 }
 
 @media (prefers-reduced-motion: no-preference) {

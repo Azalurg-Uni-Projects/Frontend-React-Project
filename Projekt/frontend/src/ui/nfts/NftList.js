@@ -11,8 +11,8 @@ const NftList = ({ nfts, getNftList } ,props) => {
             <div className="List">
                 {nfts ? nfts.map(nft =>(
                     <div key={nft._id} className="ListContainer">
+                    <img className="Small-img" src={nft.image_url} alt = "NFT NOT FOUND"/>
                     <p>{nft.title}</p>
-                    <img src={nft.image_url} alt = "NFT NOT FOUND" width="500" height="500"/>
                     </div>
                 )) : <div>No one here</div>}
             </div>

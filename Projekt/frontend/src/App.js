@@ -19,16 +19,16 @@ function App() {
         <nav>
           <ul>
             <li>
-              <Link to="/" className="bntLink delete">Restart</Link>
+              <Link to="/" className="Btn Delete">Restart</Link>
             </li>
             <li>
-              <Link to="/dashboard" className="bntLink">Dashboard</Link>
+              <Link to="/dashboard" className="Btn">Dashboard</Link>
             </li>
             <li>
-              <Link to="/users" className="bntLink">Users</Link>
+              <Link to="/users" className="Btn">Users</Link>
             </li>
             <li>
-              <Link to="/nfts" className="bntLink">Nfts</Link>
+              <Link to="/nfts" className="Btn">Nfts</Link>
             </li>
           </ul>
         </nav>
