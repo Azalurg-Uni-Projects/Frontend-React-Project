@@ -4,8 +4,8 @@
 
 - <s> Get one </s>
 - <s> Get all </s>
-- Post new
-- Edit (put)
+- <s> Post new </s>
+- <s> Edit (put) </s>
 - <s> Delete one </s>
 
 ## Nfts

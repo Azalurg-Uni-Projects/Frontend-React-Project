@@ -74,7 +74,7 @@ router.delete('/:user_id', async (req, res) => {
   }
 });
 
-router.patch('/:user_id', async (req, res) => {
+router.put('/:user_id', async (req, res) => {
   const id = req.params.user_id;
 
   Users
