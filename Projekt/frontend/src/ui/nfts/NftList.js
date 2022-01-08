@@ -1,4 +1,4 @@
-import {connect } from "react-redux"; 
+import { connect } from "react-redux"; 
 import { getNfts } from "../../ducks/nfts/selectors";
 
 const NftList = ({ nfts, getNftList } ,props) => {
