@@ -5,12 +5,14 @@ import { createMiddleware } from 'redux-api-middleware';
 
 import { userReducer} from './users/reducers';
 import { nftReducer } from './nfts/reducers';
+import { collectionReducer } from './collections/reducers';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const combinedReducers = combineReducers({
     users: userReducer,
-    nfts: nftReducer
+    nfts: nftReducer,
+    collections: collectionReducer
   });
 
 const store = createStore(combinedReducers, 
