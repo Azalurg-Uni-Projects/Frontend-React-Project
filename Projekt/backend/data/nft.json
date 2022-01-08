@@ -268,7 +268,6 @@
 			"author_id": "61c65677415be2edca000001",
 			"name": "Dreamstates",
 			"created_date": "2021-02-02",
-			"nft_id": ["61c65942d86cd8a490000001", "61c65942d86cd8a490000002", "61c65942d86cd8a490000003", "61c65942d86cd8a490000004", "61c65942d86cd8a490000005"],
 			"img_url": "https://lh3.googleusercontent.com/qpH9jCn4XrdqHR1VVV5D01Y8MPFyWCo6-lHck-y2hX3hW1Pu13jz4xmDss6ZfGqjmUDgeirwJ1CqXuut7f_PX4CGio9eNRV4bsOP=h600",
 			"url": "https://opensea.io/collection/dreamstates?tab=activity"
 		
@@ -278,7 +277,6 @@
 			"author_id": "61c65677415be2edca000002",
 			"name": "CryptoPunks",
 			"created_date": "2017-06-13",
-			"nft_id": ["61c65942d86cd8a490000006", "61c65942d86cd8a490000007", "61c65942d86cd8a490000008", "61c65942d86cd8a490000009", "61c65942d86cd8a490000010"],
 			"img_url": "https://lh3.googleusercontent.com/48oVuDyfe_xhs24BC2TTVcaYCX7rrU5mpuQLyTgRDbKHj2PtzKZsQ5qC3xTH4ar34wwAXxEKH8uUDPAGffbg7boeGYqX6op5vBDcbA=h600",
 			"url": "https://opensea.io/collection/cryptopunks"
 		},
@@ -287,7 +285,6 @@
 			"author_id": "61c65677415be2edca000003",
 			"name": "Mutant Ape Yacht Club",
 			"created_date": "2021-09-29",
-			"nft_id": ["61c65942d86cd8a490000011", "61c65942d86cd8a490000012", "61c65942d86cd8a490000013", "61c65942d86cd8a490000014", "61c65942d86cd8a490000015"],
 			"img_url": "https://lh3.googleusercontent.com/5c-HcdLMinTg3LvEwXYZYC-u5nN22Pn5ivTPYA4pVEsWJHU1rCobhUlHSFjZgCHPGSmcGMQGCrDCQU8BfSfygmL7Uol9MRQZt6-gqA=h600",
 			"url": "https://opensea.io/collection/mutant-ape-yacht-club"
 		},
@@ -296,7 +293,6 @@
 			"author_id": "61c65677415be2edca000004",
 			"name": "NFT Worlds",
 			"created_date": "2021-09-14",
-			"nft_id": ["61c65942d86cd8a490000016", "61c65942d86cd8a490000017", "61c65942d86cd8a490000018", "61c65942d86cd8a490000019", "61c65942d86cd8a490000020"],
 			"img_url": "https://lh3.googleusercontent.com/Z83eH0SKXuR-szAsaFQvoz_mQUshxiEJjrl6nh71-3gOD4U-Z5Crpt2qcwGTf4vltfBWods9VVGDkv436z2_QmKK-Wi7aBrd640l=h600",
 			"url": "https://opensea.io/collection/nft-worlds"
 		}
@@ -314,9 +310,6 @@
 			"phone_number": 551555246,
 			"birthday": "1991-09-26",
 			"join_date": "2021-02-01",
-			"created_collection_id": ["61c65b95a5665cf8e0000001"],
-			"colected_nft_id": ["61c65942d86cd8a490000007", "61c65942d86cd8a490000011", "61c65942d86cd8a490000013"],
-			"created_nft_id": ["61c65942d86cd8a490000001", "61c65942d86cd8a490000002", "61c65942d86cd8a490000003", "61c65942d86cd8a490000004", "61c65942d86cd8a490000005"],
 			"url": "https://opensea.io/Noealzii",
 			"logo_url": "https://lh3.googleusercontent.com/JbvWs8J7RjXjq_ois27TEU9L_Z5L_24XZ20uaJJdY2NxIr-K1W9pe-GCU3FQBH6oGpfoOdpoNkPc2gMiUvdFdmwUxeMlKCUJO--k=s0",
 			"description": "A photographer living in Seoul. I like marking art through photography."
@@ -331,9 +324,6 @@
 			"phone_number": 455155451,
 			"birthday": "1983-04-15",
 			"join_date": "2017-01-01",
-			"created_collection_id": ["61c65b95a5665cf8e0000002"],
-			"colected_nft_id": ["61c65942d86cd8a490000010", "61c65942d86cd8a490000020"],
-			"created_nft_id": ["61c65942d86cd8a490000006", "61c65942d86cd8a490000007", "61c65942d86cd8a490000008", "61c65942d86cd8a490000009", "61c65942d86cd8a490000010"],
 			"url": "https://opensea.io/0xc352b534e8b987e036a93539fd6897f53488e56a",
 			"logo_url": "https://storage.googleapis.com/opensea-static/opensea-profile/22.png",
 			"description": "---"
@@ -348,9 +338,6 @@
 			"phone_number": 551491111,
 			"birthday": "1995-07-20",
 			"join_date": "2021-08-03",
-			"created_collection_id": ["61c65b95a5665cf8e0000003"],
-			"colected_nft_id": ["61c65942d86cd8a490000001", "61c65942d86cd8a490000003", "61c65942d86cd8a490000004", "61c65942d86cd8a490000015"],
-			"created_nft_id": ["61c65942d86cd8a490000011", "61c65942d86cd8a490000012", "61c65942d86cd8a490000013", "61c65942d86cd8a490000014", "61c65942d86cd8a490000015"],
 			"url": "https://opensea.io/0x9056d15c49b19df52ffad1e6c11627f035c0c960",
 			"logo_url": "https://storage.googleapis.com/opensea-static/opensea-profile/13.png",
 			"description": "***"
@@ -365,9 +352,6 @@
 			"phone_number": 625625625,
 			"birthday": "1993-09-12",
 			"join_date": "2021-09-13",
-			"created_collection_id": ["61c65b95a5665cf8e0000004"],
-			"colected_nft_id": ["61c65942d86cd8a490000016"],
-			"created_nft_id": ["61c65942d86cd8a490000016", "61c65942d86cd8a490000017", "61c65942d86cd8a490000018", "61c65942d86cd8a490000019", "61c65942d86cd8a490000020"],
 			"url": "https://opensea.io/NFTWorldsVault",
 			"logo_url": "https://lh3.googleusercontent.com/SCTHL6t1OjlvebHOXHTqcW0zr3iUUUbfonwuW6bivugEJ_8tnF95LrEjnn0mB_apRoZOeUx2ICi-GE6I-n3bu7VzR8n10A1tKzk3Qg=s0",
 			"description": "World holding vault for NFT Worlds. Worlds are held for promotions, giveaways, donations and more."
@@ -382,9 +366,6 @@
 			"phone_number": 117030849,
 			"birthday": "1928-03-12",
 			"join_date": "2021-01-01",
-			"created_collection_id": [],
-			"colected_nft_id": ["61c65942d86cd8a490000002", "61c65942d86cd8a490000005", "61c65942d86cd8a490000006", "61c65942d86cd8a490000009", "61c65942d86cd8a490000014", "61c65942d86cd8a490000017", "61c65942d86cd8a490000019"],
-			"created_nft_id": [],
 			"url": "",
 			"logo_url": "https://www.freepngimg.com/thumb/logo/69920-logo-sticker-paper-king-free-png-hq.png",
 			"description": "You must be the change you wish to see in the world."
@@ -399,9 +380,6 @@
 			"phone_number": 957156047,
 			"birthday": "1999-01-30",
 			"join_date": "2021-07-08",
-			"created_collection_id": [],
-			"colected_nft_id": ["61c65942d86cd8a490000008", "61c65942d86cd8a490000012", "61c65942d86cd8a490000018"],
-			"created_nft_id": [],
 			"url": "",
 			"logo_url": "https://www.pngall.com/wp-content/uploads/2016/07/Gas-Mask-PNG-File.png",
 			"description": "Get busy living or get busy dying."
