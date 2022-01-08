@@ -4,8 +4,10 @@ const users = require('./routes/users');
 const nfts = require('./routes/nfts');
 const collections = require('./routes/collections')
 const admin = require('./routes/admin')
+const cors = require('cors');
 
 app.use(express.json());
+app.use(cors());
 
 // „Podłączamy” obsługę „endpointów”, które zdefiniowaliśmy dla kolekcji 'users' w katalogu routes/users.js
 app.use('/users', users);
