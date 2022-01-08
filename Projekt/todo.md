@@ -2,11 +2,11 @@
 
 ## Users
 
-- Get one
+- <s> Get one </s>
 - <s> Get all </s>
 - Post new
 - Edit (put)
-- Delete one
+- <s> Delete one </s>
 
 ## Nfts
 
