@@ -3,6 +3,26 @@ const router = express.Router({mergeParams: true});
 
 const Nft = require('../models/Nft');
 
+
+router.get('/populate', async (req, res) => {
+  
+  Nft
+    .find()
+    .populate(["author_id", "owner_id"])
+    .then(ans => res.json(ans))
+    .catch(err => res.status(500).json(err));
+});
+
+router.get('/populate/:nft_id', async (req, res) => {
+  const id = req.params.nft_id
+
+  Nft
+    .findById(id)
+    .populate(["author_id", "owner_id"])
+    .then(ans => res.json(ans))
+    .catch(err => res.status(500).json(err))
+});
+
 router.get('/', async (req, res) => {
   
   Nft
@@ -16,7 +36,6 @@ router.get('/:nft_id', async (req, res) => {
 
   Nft
     .findById(id)
-    .populate(["author_id", "owner_id"])
     .then(ans => res.json(ans))
     .catch(err => res.status(500).json(err))
 });
