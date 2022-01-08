@@ -65,13 +65,6 @@ router.delete('/:user_id', async (req, res) => {
       }
     })
     .catch(err => res.status(500).json(err))
-
-  if (is_empty == true){
-    Users
-      .findByIdAndDelete(id)
-      .then(ans =>  res.json(ans))
-      .catch(err => res.status(500).json(err))
-  }
 });
 
 router.put('/:user_id', async (req, res) => {
