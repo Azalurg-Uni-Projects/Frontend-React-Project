@@ -10,7 +10,7 @@
 
 ## Nfts
 
-- Get one
+- <s> Get one </s>
 - <s> Get all </s>
 - Post new
 - Edit (put)
