@@ -1,6 +1,6 @@
 # Backend
 
-REST API for Docker MongoDB (v4.4.9). Data I used to fill database I took from [OpenSea](https://opensea.io/) website (all instances have url to original page). Out of the box API should run on ```http://localhost:5000```.
+REST API for Docker MongoDB (v4.4.9). Data I used to fill database I took from [OpenSea](https://opensea.io/) website (all instances have url to original page). Out of the box, API should run on ```http://localhost:5000```.
 
 </br>
 
@@ -195,3 +195,10 @@ Example POST/PUT data:
 
 }
 ```
+
+## Admin
+
+I create it to make my life easier when it came to cleaning the database.
+
+- **POST** ```/admin/drop``` - it will delete all nfts, users and collections 
+- **POST** ```/admin/reload``` - it will delete all data and load fresh one from json file
