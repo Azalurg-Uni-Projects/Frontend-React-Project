@@ -8,7 +8,7 @@ export const collectionReducer = (state = [], action) => {
         case types.COLLECTION_CREATE:
             return [...state, action.payload]; 
 
-        case types.USER_DELETE:
+        case types.COLLECTION_DELETE:
             return state.filter(collectio => collectio._id !== action.payload._id);
 
         default:

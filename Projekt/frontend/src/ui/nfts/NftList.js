@@ -1,7 +1,8 @@
 import { connect } from "react-redux"; 
 import { getNfts } from "../../ducks/nfts/selectors";
+import { deleteNft } from "../../ducks/nfts/operations";
 
-const NftList = ({ nfts, getNftList } ,props) => {
+const NftList = ({ nfts, deleteNft} ,props) => {
 
     
 
@@ -13,6 +14,7 @@ const NftList = ({ nfts, getNftList } ,props) => {
                     <div key={nft._id} className="ListContainer">
                     <img className="Small-img" src={nft.image_url} alt = "NFT NOT FOUND"/>
                     <p>{nft.title}</p>
+                    <button className="Btn Delete" onClick={() => {deleteNft(nft)}}>Delete</button>
                     </div>
                 )) : <div>No one here</div>}
             </div>
@@ -26,7 +28,7 @@ const mapStateToProps = (state) => {
     };
 }
 const mapDispatchToProps = {
-    
+    deleteNft
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(NftList);

@@ -1,6 +1,6 @@
 import { connect } from "react-redux"; 
 import { getUsers } from "../../ducks/users/selectors";
-import { deleteUser } from "../../ducks/users/operations"
+import { deleteUser } from "../../ducks/users/operations";
 
 const UserList = ({ users, deleteUser } ,props) => {
 
