@@ -1,7 +1,7 @@
 import { connect } from "react-redux"; 
 import { getUsers } from "../../ducks/users/selectors";
 import { deleteUser } from "../../ducks/users/operations";
-
+import { Link } from "react-router-dom";
 const UserList = ({ users, deleteUser } ,props) => {
 
     return(
@@ -13,6 +13,7 @@ const UserList = ({ users, deleteUser } ,props) => {
                         <img className="Small-img Circle" src={user.logo_url} alt = "USER NOT FOUND"/>
                         <p>{user.nickname}</p>
                         <button className="Btn Delete" onClick={() => deleteUser(user)}>Delete</button>
+                        <Link to={`/users/details/${user._id}`} className="Btn">Details</Link>
                     </div>
                 )) : <div>No one here</div>}
             </div>
