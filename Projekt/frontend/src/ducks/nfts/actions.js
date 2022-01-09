@@ -9,3 +9,8 @@ export const nftCreateAction = (newNft) => ({
     type: types.NFT_CREATE,
     payload: newNft
 });
+
+export const nftDeleteAction = (nft) => ({
+    type: types.NFT_DELETE,
+    payload: nft
+});
