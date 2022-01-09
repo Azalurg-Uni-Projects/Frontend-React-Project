@@ -3,8 +3,16 @@ import { getNfts } from "../../ducks/nfts/selectors";
 import { deleteNft } from "../../ducks/nfts/operations";
 
 const NftList = ({ nfts, deleteNft} ,props) => {
-
-    
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            let j = Math.floor(Math.random() * (i + 1));
+            let temp = array[i];
+            array[i] = array[j];
+            array[j] = temp;
+        }
+        return array
+    }
+    nfts = shuffleArray(nfts)
 
     return(
         <div>
