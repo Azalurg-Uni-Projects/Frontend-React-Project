@@ -4,9 +4,46 @@ body{
   background: #0B0C10;
   font-size: 16px;
 }
+.Details{
+  display: grid;
+  grid-template-areas:
+    ". back "
+    "info collected"
+    "info created";
+
+  .Back{
+    grid-area: back;
+    text-align: right;
+    margin-right: 10%;
+  }
+
+  .Info{
+    text-align: left;
+    grid-area: info;
+    section{
+      position:sticky;
+      top: 160px;   
+    }
+  }
+
+  .Collected{
+    grid-area: collected;
+  }
+
+  .Created{
+    grid-area: created;
+  }
+
+  section{
+    margin-bottom: 20px;
+    border-bottom: 1px dashed #24A29E;
+    margin-left: 10%;
+    width: 80%;
+  }
+}
 
 .Topbar{
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   border-bottom: 1px dashed #24A29E;
   position: sticky; 
   top: 0;
@@ -17,6 +54,11 @@ body{
 .Small-img{
   height: 200px;
   width: 200px;
+}
+
+.Normal-img{
+  height: 300px;
+  width: 300px;
 }
 
 .Large-img{
@@ -38,11 +80,13 @@ input:focus {
   flex-wrap: wrap;
   justify-content: space-evenly
 }
+
 .ListContainer{
   padding: 10px 40px;
   border: 1px solid #24A29E;
   margin-bottom: 20px
 }
+
 .ListContainer > button{ 
   display: inline-block
 }
@@ -59,6 +103,7 @@ ul{
   margin-left: auto;
   margin-right: auto;
 }
+
 .detailsList{
   display: list-item;
   text-align:left

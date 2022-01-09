@@ -12,11 +12,13 @@ const UserDetails = ({ users, nfts, deleteUser } ,props) => {
     //console.log(props.match.params.id);
 
     return(
-        <div>
-            <div className="Details">
+        <div className="Details">
+            <div className="Back">
                 <Link to="/users" className="Btn">Back</Link>
-                <section className="Info">
-                    <img className="Small-img Circle" src={user.logo_url} alt = "USER NOT FOUND"/>
+            </div>
+            <div className="Info">
+                <section>
+                    <img className="Normal-img Circle" src={user.logo_url} alt = "USER NOT FOUND"/>
                     <h2>{user.nickname}</h2>
                     <p>{user.description}</p>
                     <h4>Personal data</h4>
@@ -24,32 +26,32 @@ const UserDetails = ({ users, nfts, deleteUser } ,props) => {
                     <p>birthday: {user.birthday}</p>
                     <p>place of origin: {user.place_of_origin}</p>
                     <h4>Contact</h4>
-                    <p>{user.email}</p>
-                    <p>{user.phone_number}</p>
+                    <p>email: {user.email}</p>
+                    <p>phone number: {user.phone_number}</p>
                 </section>
-                <section className="Collected">
-                    <h3>Collected NFTs</h3>
-                    <div className="List">
-                        {own ? own.map(nft =>(
-                        <div key={nft._id} className="ListContainer">
-                        <img className="Small-img" src={nft.image_url} alt = "NFT NOT FOUND"/>
-                        <p>{nft.title}</p>
-                    </div>
-                )) : <div>No one here</div>}
             </div>
-                </section>
-                <section className="Created">
-                    <h3>Created NFTs</h3>
-                    <div className="List">
-                        {created ? created.map(nft =>(
-                        <div key={nft._id} className="ListContainer">
-                        <img className="Small-img" src={nft.image_url} alt = "NFT NOT FOUND"/>
-                        <p>{nft.title}</p>
-                    </div>
-                )) : <div>No one here</div>}
+            <section className="Collected">
+                <h3>Collected NFTs</h3>
+                <div className="List">
+                    {own ? own.map(nft =>(
+                    <div key={nft._id} className="ListContainer">
+                    <img className="Small-img" src={nft.image_url} alt = "NFT NOT FOUND"/>
+                    <p>{nft.title}</p>
                 </div>
-                </section>
+            )) : <div>No one here</div>}
+        </div>
+            </section>
+            <section className="Created">
+                <h3>Created NFTs</h3>
+                <div className="List">
+                    {created ? created.map(nft =>(
+                    <div key={nft._id} className="ListContainer">
+                    <img className="Small-img" src={nft.image_url} alt = "NFT NOT FOUND"/>
+                    <p>{nft.title}</p>
+                </div>
+            )) : <div>No one here</div>}
             </div>
+            </section>
         </div>
     )
 }
