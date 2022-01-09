@@ -1,18 +1,20 @@
-import "../../style/Details.css"
 import { connect } from "react-redux"; 
 import { getUsers } from "../../ducks/users/selectors";
 import { deleteUser } from "../../ducks/users/operations";
 import { getNfts } from "../../ducks/nfts/selectors";
+import { Link } from "react-router-dom";
 
 const UserDetails = ({ users, nfts, deleteUser } ,props) => {
     let id = window.location.pathname.slice(15)
     const user = users.find(user => user._id === id)
     const own = nfts.filter(nft => nft.owner_id === user._id)
+    const created = nfts.filter(nft => nft.author_id === user._id)
     //console.log(props.match.params.id);
 
     return(
         <div>
             <div className="Details">
+                <Link to="/users" className="Btn">Back</Link>
                 <section className="Info">
                     <img className="Small-img Circle" src={user.logo_url} alt = "USER NOT FOUND"/>
                     <h2>{user.nickname}</h2>
@@ -38,6 +40,14 @@ const UserDetails = ({ users, nfts, deleteUser } ,props) => {
                 </section>
                 <section className="Created">
                     <h3>Created NFTs</h3>
+                    <div className="List">
+                        {created ? created.map(nft =>(
+                        <div key={nft._id} className="ListContainer">
+                        <img className="Small-img" src={nft.image_url} alt = "NFT NOT FOUND"/>
+                        <p>{nft.title}</p>
+                    </div>
+                )) : <div>No one here</div>}
+                </div>
                 </section>
             </div>
         </div>
