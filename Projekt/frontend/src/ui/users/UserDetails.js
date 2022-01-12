@@ -29,14 +29,15 @@ const UserDetails = ({ users, collections, nfts, deleteUser } ,props) => {
                     <h4>Contact</h4>
                     <p>email: {user.email}</p>
                     <p>phone number: {user.phone_number}</p>
-                    <p>created collections:</p>
-                    <ul>
-                    {created_collections ? created_collections.map(collection =>(
-                        <li key={collection._id}>
-                            <p>{collection.name}</p>
-                        </li>
-                        )) : <div>No one here</div>}
-                    </ul>
+                    <p>created collections:
+                        <ul>
+                        {created_collections ? created_collections.map(collection =>(
+                            <li key={collection._id}>
+                                <Link to={`/collections/details/${collection._id}`}>{collection.name}</Link>
+                            </li>
+                            )) : <div>No one here</div>}
+                        </ul>
+                    </p>
 
                 </section>
             </div>
@@ -45,8 +46,10 @@ const UserDetails = ({ users, collections, nfts, deleteUser } ,props) => {
                 <div className="List">
                     {own_nfts ? own_nfts.map(nft =>(
                     <div key={nft._id} className="ListContainer">
-                    <img className="Small-img" src={nft.image_url} alt = "NFT NOT FOUND"/>
-                    <p>{nft.title}</p>
+                        <Link to={`/nfts/${nft._id}`}>
+                            <img className="Small-img" src={nft.image_url} alt = "NFT NOT FOUND"/>
+                             <p>{nft.title}</p>  
+                        </Link>
                 </div>
             )) : <div>No one here</div>}
         </div>
@@ -56,8 +59,10 @@ const UserDetails = ({ users, collections, nfts, deleteUser } ,props) => {
                 <div className="List">
                     {created_nfts ? created_nfts.map(nft =>(
                     <div key={nft._id} className="ListContainer">
-                    <img className="Small-img" src={nft.image_url} alt = "NFT NOT FOUND"/>
-                    <p>{nft.title}</p>
+                    <Link to={`/nfts/${nft._id}`}>
+                            <img className="Small-img" src={nft.image_url} alt = "NFT NOT FOUND"/>
+                             <p>{nft.title}</p>  
+                        </Link>
                 </div>
             )) : <div>No one here</div>}
             </div>
