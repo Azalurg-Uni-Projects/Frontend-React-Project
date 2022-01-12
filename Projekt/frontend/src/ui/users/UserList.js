@@ -2,6 +2,7 @@ import { connect } from "react-redux";
 import { getUsers } from "../../ducks/users/selectors";
 import { deleteUser } from "../../ducks/users/operations";
 import { Link } from "react-router-dom";
+
 const UserList = ({ users, deleteUser } ,props) => {
 
     return(

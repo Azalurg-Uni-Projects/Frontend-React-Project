@@ -1,6 +1,7 @@
 import { connect } from "react-redux"; 
 import { getCollections } from "../../ducks/collections/selectors";
 import { deleteCollection } from "../../ducks/collections/operations";
+import { Link } from "react-router-dom";
 
 const CollectionList = ({ collections, deleteCollection } ,props) => {
 
@@ -10,7 +11,9 @@ const CollectionList = ({ collections, deleteCollection } ,props) => {
             <div className="List">
                 {collections ? collections.map(collection =>(
                     <div key={collection._id} className="ListContainer">
-                        <img className="Small-img" src={collection.img_url} alt = "COLLECTION NOT FOUND"/>
+                        <Link to={`/collections/details/${collection._id}`}>
+                            <img className="Small-img" src={collection.img_url} alt = "COLLECTION NOT FOUND"/>
+                        </Link>
                         <p>{collection.name}</p>
                         <button className="Btn Delete" onClick={() => deleteCollection(collection)}>Delete</button>
                     </div>
