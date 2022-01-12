@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import { withRouter } from "react-router";
-import { getUserList } from "../ducks/users/operations";
 import {connect } from "react-redux"; 
 import { getUsers } from "../ducks/users/selectors";
+import { getUserList } from "../ducks/users/operations";
 import { getNfts } from "../ducks/nfts/selectors";
 import { getNftsList } from "../ducks/nfts/operations";
 import { getCollections } from "../ducks/collections/selectors";

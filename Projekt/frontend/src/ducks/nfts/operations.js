@@ -1,12 +1,21 @@
 import axios from "axios";
 import * as actions from './actions';
 
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        let temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+    return array
+}
 
 export const getNftsList = () => {
     return async dispatch => {
         const response = await 
             axios.get('http://localhost:5000/nfts');
-        dispatch(actions.nftListAction(response.data));
+        dispatch(actions.nftListAction(shuffleArray(response.data)));
     }
 }
 

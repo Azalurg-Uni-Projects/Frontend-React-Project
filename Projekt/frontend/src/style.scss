@@ -14,7 +14,7 @@ body{
   .Back{
     grid-area: back;
     text-align: right;
-    margin-right: 10%;
+    margin-right: 15%;
   }
 
   .Info{
@@ -139,6 +139,11 @@ h1, h2, h3, h4{
 
 .Delete:hover{
   background-color:rgb(131, 20, 20)
+}
+
+.Link{
+  color: white;
+  font-weight: bold;
 }
 
 input{

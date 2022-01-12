@@ -30,8 +30,6 @@ router.post('/reload', async (req, res) => {
         await Nft.insertMany(data.nft)
         await User.insertMany(data.user)
         await Collection.insertMany(data.collection)      
-
-        await User.find().populate()
     }
     catch{
         res.status(500).send(false)
