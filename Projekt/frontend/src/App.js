@@ -14,6 +14,9 @@ import NftList from './ui/nfts/NftList';
 import CollectionList from './ui/collections/CollectionList';
 
 import UserDetails from './ui/users/UserDetails';
+import NftDetails from './ui/nfts/NftDetails';
+import CollectionDetails from './ui/collections/CollectionDetails';
+
 
 function App() {
   return (
@@ -41,15 +44,16 @@ function App() {
           </nav>
         </section>
       <Switch>
+        <Route path="/collections/details/:collection_id" component={CollectionDetails}/>
+        <Route path="/nfts/details/:nft_id" component={NftDetails}/>
+        <Route path="/users/details/:user_id" component={UserDetails}/>
 
-        <Route path="/users/details/:user_id"><UserDetails/></Route>
+        <Route path="/collections" component={CollectionList}/>
+        <Route path="/nfts" component={NftList}/>
+        <Route path="/users" component={UserList}/>
 
-        <Route path="/collections"><CollectionList/></Route>
-        <Route path="/nfts"><NftList/></Route>
-        <Route path="/users"><UserList/></Route>
-
-        <Route path="/dashboard" component={Dashboard}><Dashboard /></Route>
-        <Route path="/"><Restart /></Route>
+        <Route path="/dashboard" component={Dashboard}/>
+        <Route path="/" component={Restart}/>
       </Switch>
       </div>
     </Router>

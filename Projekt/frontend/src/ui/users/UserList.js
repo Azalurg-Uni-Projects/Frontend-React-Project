@@ -10,10 +10,11 @@ const UserList = ({ users, deleteUser } ,props) => {
             <div className="List">
                 {users ? users.map(user =>(
                     <div key={user._id} className="ListContainer">
-                        <img className="Small-img Circle" src={user.logo_url} alt = "USER NOT FOUND"/>
+                        <Link to={`/users/details/${user._id}`}>
+                            <img className="Small-img Circle" src={user.logo_url} alt = "USER NOT FOUND"/>
+                        </Link>
                         <p>{user.nickname}</p>
                         <button className="Btn Delete" onClick={() => deleteUser(user)}>Delete</button>
-                        <Link to={`/users/details/${user._id}`} className="Btn">Details</Link>
                     </div>
                 )) : <div>No one here</div>}
             </div>
