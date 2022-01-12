@@ -2,14 +2,15 @@ import { connect } from "react-redux";
 import { getUsers } from "../../ducks/users/selectors";
 import { deleteUser } from "../../ducks/users/operations";
 import { getNfts } from "../../ducks/nfts/selectors";
+import { getCollectios } from "../../ducks/collections/selectors";
 import { Link } from "react-router-dom";
 
-const UserDetails = ({ users, nfts, deleteUser } ,props) => {
+const UserDetails = ({ users, collections, nfts, deleteUser } ,props) => {
     let id = window.location.pathname.slice(15)
     const user = users.find(user => user._id === id)
-    const own = nfts.filter(nft => nft.owner_id === user._id)
-    const created = nfts.filter(nft => nft.author_id === user._id)
-    //console.log(props.match.params.id);
+    const own_nfts = nfts.filter(nft => nft.owner_id === user._id)
+    const created_nfts = nfts.filter(nft => nft.author_id === user._id)
+    const created_collections = collections.filter(collection => collection.author_id === user._id)
 
     return(
         <div className="Details">
@@ -28,12 +29,21 @@ const UserDetails = ({ users, nfts, deleteUser } ,props) => {
                     <h4>Contact</h4>
                     <p>email: {user.email}</p>
                     <p>phone number: {user.phone_number}</p>
+                    <p>created collections:</p>
+                    <ul>
+                    {created_collections ? created_collections.map(collection =>(
+                        <li key={collection._id}>
+                            <p>{collection.name}</p>
+                        </li>
+                        )) : <div>No one here</div>}
+                    </ul>
+
                 </section>
             </div>
             <section className="Collected">
                 <h3>Collected NFTs</h3>
                 <div className="List">
-                    {own ? own.map(nft =>(
+                    {own_nfts ? own_nfts.map(nft =>(
                     <div key={nft._id} className="ListContainer">
                     <img className="Small-img" src={nft.image_url} alt = "NFT NOT FOUND"/>
                     <p>{nft.title}</p>
@@ -44,7 +54,7 @@ const UserDetails = ({ users, nfts, deleteUser } ,props) => {
             <section className="Created">
                 <h3>Created NFTs</h3>
                 <div className="List">
-                    {created ? created.map(nft =>(
+                    {created_nfts ? created_nfts.map(nft =>(
                     <div key={nft._id} className="ListContainer">
                     <img className="Small-img" src={nft.image_url} alt = "NFT NOT FOUND"/>
                     <p>{nft.title}</p>
@@ -59,7 +69,8 @@ const UserDetails = ({ users, nfts, deleteUser } ,props) => {
 const mapStateToProps = (state) => {
     return {
         users: getUsers(state),
-        nfts: getNfts(state)
+        nfts: getNfts(state),
+        collections: getCollectios(state)
     };
 }
 const mapDispatchToProps = {
