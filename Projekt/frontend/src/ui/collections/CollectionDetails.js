@@ -21,7 +21,7 @@ const NftDetails =({ users, collections, nfts } ,props) => {
                 <img className="Large-img" src={collection.img_url} alt = "COLLECTION NOT FOUND"/>
                 <p>{collection.description}</p>
                 <p>author: <Link className="Link" to={`/users/details/${author._id}`}>{author.nickname}</Link></p>
-                <p>created date: {collection.created_date}</p>
+                <p>created date: {new Date(collection.created_date).toLocaleDateString('pl-PL')}</p>
                 <div className="List">
                     {own_nfts ? own_nfts.map(nft =>(
                     <div key={nft._id} className="ListContainer">

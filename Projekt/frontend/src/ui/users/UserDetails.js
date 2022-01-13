@@ -24,7 +24,7 @@ const UserDetails = ({ users, collections, nfts, deleteUser } ,props) => {
                     <p>{user.description}</p>
                     <h4>Personal data</h4>
                     <p>name: {user.firstname} {user.lastname}</p>
-                    <p>birthday: {user.birthday}</p>
+                    <p>birthday: {new Date(user.birthday).toLocaleDateString('pl-PL')}</p>
                     <p>place of origin: {user.place_of_origin}</p>
                     <h4>Contact</h4>
                     <p>email: {user.email}</p>
@@ -33,7 +33,7 @@ const UserDetails = ({ users, collections, nfts, deleteUser } ,props) => {
                     {created_collections ? created_collections.map(collection =>(
                         <Link className="Link" to={`/collections/details/${collection._id}`} key={collection._id}> - {collection.name}</Link>
                     )) : <div>No one here</div>}
-                        
+                    <br/>
                     
 
                 </section>

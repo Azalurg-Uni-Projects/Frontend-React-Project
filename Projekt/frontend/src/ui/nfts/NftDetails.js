@@ -10,6 +10,7 @@ const NftDetails =({ users, collections, nfts } ,props) => {
     const owner = users.filter(user => user._id === nft.owner_id)[0]
     const author = users.filter(user => user._id === nft.author_id)[0]
     const collection = collections.filter(collection => collection._id === nft.collection_id)[0]
+    
     return(
         <div className="Details">
             <div className="Back">
@@ -19,9 +20,9 @@ const NftDetails =({ users, collections, nfts } ,props) => {
                 <section>
                     <h3>Nft data</h3>
                     <p>price: {nft.price} {nft.currency}</p>
-                    <p>created date: {nft.created_date}</p>
+                    <p>created date: {new Date(nft.created_date).toLocaleDateString('pl-PL')}</p>
                     collection: <Link className="Link" to={`/collections/details/${collection._id}`}>{collection.name}</Link><br/><br/>
-                    autor: <Link className="Link" to={`/users/details/${author._id}`}>{author.nickname}</Link><br/><br/>
+                    author: <Link className="Link" to={`/users/details/${author._id}`}>{author.nickname}</Link><br/><br/>
                     owner: <Link className="Link" to={`/users/details/${owner._id}`}>{owner.nickname}</Link><br/><br/>
                 </section>
             </div>
