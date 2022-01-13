@@ -1,6 +1,8 @@
 import { Field, Form, Formik } from 'formik';
 import { connect } from 'react-redux';
 import { createUser } from '../../ducks/users/operations';
+
+// Dodać historię i walidację danych
 const UserForm = ({ createUser }, props) => {
 
     const handleSubmit = (values) => {
@@ -12,8 +14,17 @@ const UserForm = ({ createUser }, props) => {
             <h3>Add User</h3>
             <Formik
                 initialValues={{
-                    name: '',
-                    username: ''
+                    nickname: '',
+                    firstname: '',
+                    lastname: "",
+                    place_of_origin: "",
+                    emial: "",
+                    phone_number: "",
+                    birthday: "",
+                    url: "",
+                    logo_url: "",
+                    description: ""
+
                 }}
                 onSubmit={(values) => handleSubmit(values)}
                 enableReinitialize={true}>
