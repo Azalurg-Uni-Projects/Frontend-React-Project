@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { createUser } from '../../ducks/users/operations';
 
 // Dodać historię i walidację danych
-const UserForm = ({ createUser }, props) => {
+const UserCreate = ({ createUser }, props) => {
 
     const handleSubmit = (values) => {
         createUser(values);
@@ -11,7 +11,7 @@ const UserForm = ({ createUser }, props) => {
 
     return (
         <div>
-            <h3>Add User</h3>
+            <h3>Create User</h3>
             <Formik
                 initialValues={{
                     nickname: '',
@@ -32,7 +32,7 @@ const UserForm = ({ createUser }, props) => {
                         <Field name="name" />
                         <Field name="username" />
                         <button type="submit">
-                            Zatwierdz
+                            Create
                         </button>
                     </Form>
                 </Formik>
@@ -49,4 +49,4 @@ const mapDispatchToProps = ({
 });
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(UserForm);
+export default connect(mapStateToProps, mapDispatchToProps)(UserCreate);
