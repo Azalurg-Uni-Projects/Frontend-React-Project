@@ -67,7 +67,7 @@ Example POST/PUT data:
     "phone_number": "123456789",
     "place_of_origin":"Earth (Dimension C-137)",
     "birthday":"1950-09-11",
-    "logo_url":"https://static.wikia.nocookie.net/rickandmorty/images/a/a6/Rick_Sanchez.png/revision/latest/scale-to-width-down/848?cb=20160923150728",
+    "logo_url":"https://logo_url.example",
     "description":"What, so everyone’s supposed to sleep every single night now? You realize that nighttime makes up half of all time?"
 }
 ```
@@ -80,7 +80,7 @@ Example POST/PUT data:
 - **GET** ```/nfts/:nft_id```
 - **GET** ```/nfts/populate```
 - **GET** ```/nfts/:nft_id/populate```
-- **POST** ```/nfts```
+- **POST** ```/nfts/:author_id```
 - **DELETE** ```/nfts/:nft_id```
 - **PUT** ```/nfts/:nft_id```
 
@@ -151,15 +151,12 @@ Example GET response (populate):
 Example POST/PUT data:
 ```json
 {
-    "nickname":"Rick",
-    "firstname":"Rick", 
-    "lastname":"Sanchez",
-    "email": "rick@example.com",
-    "phone_number": "123456789",
-    "place_of_origin":"Earth (Dimension C-137)",
-    "birthday":"1950-09-11",
-    "logo_url":"https://static.wikia.nocookie.net/rickandmorty/images/a/a6/Rick_Sanchez.png/revision/latest/scale-to-width-down/848?cb=20160923150728",
-    "description":"What, so everyone’s supposed to sleep every single night now? You realize that nighttime makes up half of all time?"
+    "title": "Nft",
+    "price": 1,
+    "currency": "ETH",
+    "image_url": "https://image_url.example",
+    "url": "https://url.example",
+    "description": "Description of NFT"
 }
 ```
 
@@ -169,7 +166,7 @@ Example POST/PUT data:
 
 - **GET** ```/collections```
 - **GET** ```/collections/:collection_id```
-- **POST** ```/collections```
+- **POST** ```/collections.:author_id```
 - **DELETE** ```/collections/:collections_id```
 - **PUT** ```/collections/:collections_id```
 
@@ -190,8 +187,8 @@ Example POST/PUT data:
 ```json
 {
     "name":"Dreamstates",
-    "img_url": "https://lh3.googleusercontent.com/qpH9jCn4XrdqHR1VVV5D01Y8MPFyWCo6-lHck-y2hX3hW1Pu13jz4xmDss6ZfGqjmUDgeirwJ1CqXuut7f_PX4CGio9eNRV4bsOP=h600",
-    "url":"https://opensea.io/collection/dreamstates?tab=activity"
+    "img_url": "https://img_url.example",
+    "url":"https://url.example"
 
 }
 ```
