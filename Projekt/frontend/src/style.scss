@@ -42,6 +42,30 @@ body{
   }
 }
 
+.Input{
+  display: grid;
+  grid-template-areas:
+    "left right"
+    "email email"
+    "description description"
+    "submmit submit";
+
+  .Left{
+    text-align: left;
+    grid-area: left;
+  }
+
+  .Right{
+    text-align: left;
+    grid-area: right;
+  }
+
+  .Email{
+    text-align: center;
+    grid-area: email;
+  }
+}
+
 .Topbar{
   margin-bottom: 40px;
   border-bottom: 1px dashed #24A29E;

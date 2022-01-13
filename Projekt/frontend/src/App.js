@@ -17,6 +17,14 @@ import UserDetails from './ui/users/UserDetails';
 import NftDetails from './ui/nfts/NftDetails';
 import CollectionDetails from './ui/collections/CollectionDetails';
 
+import UserCreate from './ui/users/UserCreate';
+import NftCreate from './ui/nfts/NftCreate';
+import CollectionCreate from './ui/collections/CollectionCreate';
+
+import UserEdit from './ui/users/UserEdit';
+import NftEdit from './ui/nfts/NftEdit';
+import CollectionEdit from './ui/collections/CollectionEdit';
+
 
 function App() {
   return (
@@ -26,7 +34,7 @@ function App() {
           <nav>
             <ul>
               <li>
-                <Link to="/" className="Btn Delete">Restart</Link>
+                <Link to="/" className="Btn Delete">Load</Link>
               </li>
               <li>
                 <Link to="/dashboard" className="Btn">Dashboard</Link>
@@ -44,6 +52,14 @@ function App() {
           </nav>
         </section>
       <Switch>
+        <Route path="/collections/create" component={CollectionCreate}/>
+        <Route path="/nfts/create" component={NftCreate}/>
+        <Route path="/users/create" component={UserCreate}/>
+        
+        <Route path="/collections/edit/:collection_id" component={CollectionEdit}/>
+        <Route path="/nfts/edit/:nft_id" component={NftEdit}/>
+        <Route path="/users/edit/:user_id" component={UserEdit}/>
+
         <Route path="/collections/details/:collection_id" component={CollectionDetails}/>
         <Route path="/nfts/details/:nft_id" component={NftDetails}/>
         <Route path="/users/details/:user_id" component={UserDetails}/>

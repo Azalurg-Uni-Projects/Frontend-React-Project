@@ -8,6 +8,8 @@ const UserList = ({ users, deleteUser } ,props) => {
     return(
         <div>
             <h1>Users List</h1>
+            <Link to={'/users/create'} className="Btn">Create User</Link>
+
             <div className="List">
                 {users ? users.map(user =>(
                     <div key={user._id} className="ListContainer">

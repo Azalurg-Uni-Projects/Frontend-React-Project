@@ -26,6 +26,7 @@ const UserDetails = ({ users, collections, nfts, deleteUser } ,props) => {
                     <p>name: {user.firstname} {user.lastname}</p>
                     <p>birthday: {new Date(user.birthday).toLocaleDateString('pl-PL')}</p>
                     <p>place of origin: {user.place_of_origin}</p>
+                    <p>join date: {new Date(user.registration_date).toLocaleDateString('pl-PL')}</p>
                     <h4>Contact</h4>
                     <p>email: {user.email}</p>
                     <p>phone number: {user.phone_number}</p>
