@@ -17,7 +17,6 @@ const UserList = ({ users, deleteUser } ,props) => {
                             <img className="Small-img Circle" src={user.logo_url} alt = "USER NOT FOUND"/>
                         </Link>
                         <p>{user.nickname}</p>
-                        <button className="Btn Delete" onClick={() => deleteUser(user)}>Delete</button>
                     </div>
                 )) : <div>No one here</div>}
             </div>

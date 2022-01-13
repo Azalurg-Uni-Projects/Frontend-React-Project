@@ -3,8 +3,10 @@ import { getUsers } from "../../ducks/users/selectors";
 import { getNfts } from "../../ducks/nfts/selectors";
 import { getCollections } from "../../ducks/collections/selectors";
 import { Link } from "react-router-dom";
+import { deleteCollection } from "../../ducks/collections/operations";
+import { withRouter } from "react-router"
 
-const NftDetails =({ users, collections, nfts } ,props) => {
+const NftDetails =({ users, collections, nfts, deleteCollection, history } ,props) => {
     let id = window.location.pathname.slice(21)
     const collection = collections.filter(collection => collection._id === id)[0]
     const author = users.filter(user => user._id === collection.author_id)[0]
@@ -20,8 +22,9 @@ const NftDetails =({ users, collections, nfts } ,props) => {
                 <h1>{collection.name}</h1>
                 <img className="Large-img" src={collection.img_url} alt = "COLLECTION NOT FOUND"/>
                 <p>{collection.description}</p>
-                <p>author: <Link className="Link" to={`/users/details/${author._id}`}>{author.nickname}</Link></p>
+                <p>author: {author ? <Link className="Link" to={`/users/details/${author._id}`}>{author.nickname}</Link> : <>none</>}</p>
                 <p>created date: {new Date(collection.created_date).toLocaleDateString('pl-PL')}</p>
+                <button className="Btn Delete" onClick={() => {deleteCollection(collection); history.push('/collections')}}>Delete</button>
                 <div className="List">
                     {own_nfts ? own_nfts.map(nft =>(
                     <div key={nft._id} className="ListContainer">
@@ -45,7 +48,7 @@ const mapStateToProps = (state) => {
     };
 }
 const mapDispatchToProps = {
-    
+    deleteCollection
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(NftDetails);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(NftDetails));

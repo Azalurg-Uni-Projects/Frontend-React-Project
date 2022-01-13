@@ -4,8 +4,9 @@ import { deleteUser } from "../../ducks/users/operations";
 import { getNfts } from "../../ducks/nfts/selectors";
 import { getCollections } from "../../ducks/collections/selectors";
 import { Link } from "react-router-dom";
+import { withRouter } from "react-router";
 
-const UserDetails = ({ users, collections, nfts, deleteUser } ,props) => {
+const UserDetails = ({ users, collections, nfts, deleteUser, history } ,props) => {
     let id = window.location.pathname.slice(15)
     const user = users.find(user => user._id === id)
     const own_nfts = nfts.filter(nft => nft.owner_id === user._id)
@@ -35,8 +36,8 @@ const UserDetails = ({ users, collections, nfts, deleteUser } ,props) => {
                         <Link className="Link" to={`/collections/details/${collection._id}`} key={collection._id}> - {collection.name}</Link>
                     )) : <div>No one here</div>}
                     <br/>
-                    
-
+                    <Link className="Btn" to={`/users/edit/${id}`}>Edit</Link>
+                    <button className="Btn Delete" onClick={() => {deleteUser(user); history.push("/users")}}>Delete</button>
                 </section>
             </div>
             <section className="Collected">
@@ -80,4 +81,4 @@ const mapDispatchToProps = {
     deleteUser
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(UserDetails);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(UserDetails));

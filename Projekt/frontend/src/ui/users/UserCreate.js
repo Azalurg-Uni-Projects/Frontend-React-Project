@@ -10,7 +10,7 @@ const UserCreate = ({ createUser, history }, props) => {
     const handleSubmit = (values) => {
         console.log(values);
         createUser(values);
-        history.push('/movies')
+        history.push('/users')
     }
 
     return (
