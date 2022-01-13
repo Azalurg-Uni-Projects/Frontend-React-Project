@@ -43,7 +43,7 @@ export const editUser = (user) => {
         try {
             const response = await axios.put(`http://localhost:5000/users/${user._id}`, user);
             if(response.status === 200) 
-                dispatch(actions.userCreateAction(response.data));
+                dispatch(actions.userEditAction(response.data));
         } catch(ex) {
             console.log(ex)
         }

@@ -14,3 +14,8 @@ export const nftDeleteAction = (nft) => ({
     type: types.NFT_DELETE,
     payload: nft
 });
+
+export const nftEditAction = (nft) => ({
+    type: types.NFT_EDIT,
+    payload: nft
+});

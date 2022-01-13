@@ -14,3 +14,8 @@ export const collectionDeleteAction = (collection) => ({
     type: types.COLLECTION_DELETE,
     payload: collection
 });
+
+export const collectionEditAction = (Collection) => ({
+    type: types.COLLECTION_EDIT,
+    payload: Collection
+});
