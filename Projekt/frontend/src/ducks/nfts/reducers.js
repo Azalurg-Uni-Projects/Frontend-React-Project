@@ -11,6 +11,9 @@ export const nftReducer = (state = [], action) => {
         case types.NFT_DELETE:
             return state.filter(nft => nft._id !== action.payload._id)
 
+        case types.NFT_EDIT:
+            return [...state.filter(nft => nft._id !== action.payload._id), action.payload]
+
         default:
             return state;
     }

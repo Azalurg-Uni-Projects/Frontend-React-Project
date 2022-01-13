@@ -9,7 +9,10 @@ export const collectionReducer = (state = [], action) => {
             return [...state, action.payload]; 
 
         case types.COLLECTION_DELETE:
-            return state.filter(collectio => collectio._id !== action.payload._id);
+            return state.filter(collection => collection._id !== action.payload._id);
+
+        case types.COLLECTION_EDIT:
+            return [...state.filter(collection => collection._id !== action.payload._id), action.payload]
 
         default:
             return state;
