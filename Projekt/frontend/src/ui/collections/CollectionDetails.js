@@ -16,12 +16,9 @@ const NftDetails =({ users, collections, nfts } ,props) => {
             <div className="Back">
                 <Link to="/collections" className="Btn">Back</Link>
             </div>
-            <div className="Info">
-                
-            </div>
             <div className="Colleted">  
                 <h1>{collection.name}</h1>
-                <img src={collection.img_url} alt = "COLLECTION NOT FOUND"/>
+                <img className="Large-img" src={collection.img_url} alt = "COLLECTION NOT FOUND"/>
                 <p>{collection.description}</p>
                 <p>author: <Link className="Link" to={`/users/details/${author._id}`}>{author.nickname}</Link></p>
                 <p>created date: {collection.created_date}</p>

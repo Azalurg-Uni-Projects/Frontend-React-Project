@@ -7,7 +7,7 @@ body{
 .Details{
   display: grid;
   grid-template-areas:
-    ". back "
+    "back back "
     "info collected"
     "info created";
 
@@ -62,8 +62,7 @@ body{
 }
 
 .Large-img{
-  height: 400px;
-  width: 400px;
+  max-width: 80vw;
 }
 
 .Circle{

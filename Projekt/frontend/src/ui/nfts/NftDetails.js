@@ -17,7 +17,7 @@ const NftDetails =({ users, collections, nfts } ,props) => {
             </div>
             <div className="Info">
                 <section>
-                    <br/>
+                    <h3>Nft data</h3>
                     <p>price: {nft.price} {nft.currency}</p>
                     <p>created date: {nft.created_date}</p>
                     collection: <Link className="Link" to={`/collections/details/${collection._id}`}>{collection.name}</Link><br/><br/>
