@@ -11,6 +11,9 @@ export const userReducer = (state = [], action) => {
         case types.USER_DELETE:
             return state.filter(user => user._id !== action.payload._id)
             
+        case types.USER_EDIT:
+            return [...state.filter(user => user._id !== action.payload._id), action.payload] 
+
         default:
             return state;
     }

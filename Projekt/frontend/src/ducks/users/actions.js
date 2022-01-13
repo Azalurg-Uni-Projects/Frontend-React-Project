@@ -10,6 +10,11 @@ export const userCreateAction = (newUser) => ({
     payload: newUser
 });
 
+export const userEditAction = (user) => ({
+    type: types.USER_EDIT,
+    payload: user
+});
+
 
 export const userDeleteAction = (user) => ({
     type: types.USER_DELETE,
