@@ -6,7 +6,7 @@ export const userSchema = Yup.object().shape({
     firstname: Yup.string(),
     lastname: Yup.string(),
     place_of_origin: Yup.string(),
-    emial: Yup.string().email().required(),
+    email: Yup.string().email().required(),
     phone_number: Yup.string(),
     birthday: Yup.date().max(today).required(),
     url: Yup.string().url(),

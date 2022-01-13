@@ -8,7 +8,6 @@ import { userSchema } from './UserSchema';
 const UserCreate = ({ createUser, history }, props) => {
 
     const handleSubmit = (values) => {
-        console.log(values);
         createUser(values);
         history.push('/users')
     }
@@ -79,9 +78,9 @@ const UserCreate = ({ createUser, history }, props) => {
                         </li>
                     </ol>
                     <div className="Email">
-                        <label htmlFor="emial">Emial: </label>  
-                        <Field name="emial" type="text" id="emial"/>  
-                        <ErrorMessage name="emial" component="p" className='Delete'/> 
+                        <label htmlFor="email">Email: </label>  
+                        <Field name="email" type="text" id="email"/>  
+                        <ErrorMessage name="email" component="p" className='Delete'/> 
                     </div>
                     <div className="Description">
                         <label htmlFor="description">Description: </label>  
