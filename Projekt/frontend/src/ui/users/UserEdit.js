@@ -11,7 +11,6 @@ const UserEdit = ({ users, editUser, history }, props) => {
     const user = users.find(user => user._id === id)
     
     const handleSubmit = (values) => {
-        console.log(values);
         editUser(values);
         history.push('/users')
     }

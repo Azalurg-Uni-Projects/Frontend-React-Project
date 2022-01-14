@@ -36,8 +36,10 @@ const UserDetails = ({ users, collections, nfts, deleteUser, history } ,props) =
                         <Link className="Link" to={`/collections/details/${collection._id}`} key={collection._id}> - {collection.name}</Link>
                     )) : <div>No one here</div>}
                     <br/>
+                    <br/>
                     <Link to={`/nfts/create/${id}`} className="Btn">Create Nft</Link>
                     <Link className="Btn" to={`/users/edit/${id}`}>Edit</Link>
+                    <br/>
                     <button className="Btn Delete" onClick={() => {deleteUser(user); history.push("/users")}}>Delete</button>
                 </section>
             </div>

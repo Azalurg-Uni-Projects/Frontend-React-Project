@@ -34,7 +34,7 @@ router.post('/:author_id', async (req, res) => {
 
   collection
     .save()
-    .then(ans => res.json(ans))
+    .then(ans => res.status(200).json(ans))
     .catch(err => res.status(500).json(err))
 });
 
@@ -52,7 +52,7 @@ router.put('/:collection_id', async (req, res) => {
 
   Nft
     .findByIdAndUpdate(id, {...req.body})
-    .then(ans => res.json(ans))
+    .then(ans => res.status.json(ans))
     .catch(err => res.status(500).json(err));
 });
 

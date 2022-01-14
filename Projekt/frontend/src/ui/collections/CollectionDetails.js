@@ -24,7 +24,14 @@ const NftDetails =({ users, collections, nfts, deleteCollection, history } ,prop
                 <p>{collection.description}</p>
                 <p>author: {author ? <Link className="Link" to={`/users/details/${author._id}`}>{author.nickname}</Link> : <>none</>}</p>
                 <p>created date: {new Date(collection.created_date).toLocaleDateString('pl-PL')}</p>
-                <button className="Btn Delete" onClick={() => {deleteCollection(collection); history.push('/collections')}}>Delete</button>
+                <ul>
+                    <li>
+                        <Link className="Btn" to={`/collections/edit/${id}`}>Edit</Link>
+                    </li>
+                    <li>
+                        <button className="Btn Delete" onClick={() => {deleteCollection(collection); history.push('/collections')}}>Delete</button>
+                    </li>
+                </ul>
                 <div className="List">
                     {own_nfts ? own_nfts.map(nft =>(
                     <div key={nft._id} className="ListContainer">

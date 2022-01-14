@@ -27,11 +27,11 @@ export const deleteCollection = (collection) => {
     }
 }
 
-export const createCollection = (newCollection) => {
+export const createCollection = (newCollection, id) => {
     return async dispatch => {
         try {
             const response = await 
-            axios.post('http://localhost:5000/collections', newCollection);
+            axios.post(`http://localhost:5000/collections/${id}`, newCollection);
             if(response.status === 200) 
                 dispatch(actions.collectionCreateAction(response.data));
         } catch(ex) {
@@ -44,6 +44,7 @@ export const editCollection = (collection) => {
     return async dispatch => {
         try {
             const response = await 
+            console.log("XD");
             axios.put(`http://localhost:5000/collections/${collection._id}`, collection);
             if(response.status === 200) 
                 dispatch(actions.collectionEditAction(response.data));

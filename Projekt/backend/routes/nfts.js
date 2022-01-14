@@ -76,7 +76,7 @@ router.put('/:nft_id', async (req, res) => {
   const id = req.params.nft_id;
 
   Nft
-    .findByIdAndUpdate(id, {...req.body})
+    .FindOneAndUpdateOptions(id, {...req.body}, {options: { returnDocument: after }})
     .then(ans => res.json(ans))
     .catch(err => res.status(500).json(err));
 
