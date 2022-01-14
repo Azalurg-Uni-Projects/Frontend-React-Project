@@ -50,7 +50,7 @@ const UserEdit = ({ users, editUser, history }, props) => {
                     <ol className="Right">
                         <li>
                             <label htmlFor="phone_number">Phone number: </label>  
-                            <Field name="phone_number" type="text" id="phone_number"/>  
+                            <Field name="phone_number" type="tel" placeholder="123-456-789" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" id="phone_number"/>  
                             <ErrorMessage name="phone_number" component="p" className='Delete'/> 
                         </li>
                         <li>
@@ -71,7 +71,7 @@ const UserEdit = ({ users, editUser, history }, props) => {
                     </ol>
                     <div className="Email">
                         <label htmlFor="email">Emial: </label>  
-                        <Field name="email" type="text" id="email"/>  
+                        <Field name="email" type="email" placeholder="email@example.com" id="email"/>  
                         <ErrorMessage name="email" component="p" className='Delete'/> 
                     </div>
                     <div className="Description">

@@ -7,11 +7,9 @@ import { collectionSchema } from './CollectionSchema';
 
 const CollectionCreate = ({ createCollection, history }, props) => {
 
-    let id = window.location.pathname.slice(13)
-    console.log(id);
-
     const handleSubmit = (values) => {  
-        createCollection(values);
+        let id = window.location.pathname.slice(20)
+        createCollection(values, id);
         history.push('/collections')
     }
 

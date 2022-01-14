@@ -74,6 +74,7 @@ router.delete('/:nft_id', async (req, res) => {
 
 router.put('/:nft_id', async (req, res) => {
   const id = req.params.nft_id;
+  // const nft = res.body  <=  another one
 
   Nft
     .FindOneAndUpdateOptions(id, {...req.body}, {options: { returnDocument: after }})

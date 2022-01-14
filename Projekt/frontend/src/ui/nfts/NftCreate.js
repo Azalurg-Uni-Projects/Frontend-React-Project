@@ -35,12 +35,16 @@ const NftCreate = ({ createNft, history }, props) => {
                         </li>
                         <li>
                             <label htmlFor="price">Price: </label>  
-                            <Field name="price" type="text" id="price"/>  
+                            <Field name="price" type="number" id="price"/>  
                             <ErrorMessage name="price" component="p" className='Delete'/> 
                         </li>
                         <li>
                             <label htmlFor="currency">Currency: </label>  
-                            <Field name="currency" type="text" id="currency"/>  
+                            <Field name="currency" as="select" id="image_url">  
+                                <option value="ETH">ETH</option>
+                                <option value="USD">USD</option>
+                                <option value="BTC">BTC</option>
+                            </Field> 
                             <ErrorMessage name="currency" component="p" className='Delete'/> 
                         </li>
                     </ol>

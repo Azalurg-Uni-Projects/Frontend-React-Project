@@ -173,7 +173,7 @@ h1, h2, h3, h4{
   font-weight: bold;
 }
 
-input{
+input, select{
   color: #C5C6C7;
   background-color: #1F2833;
   border: 2px solid #24A29E;
@@ -184,6 +184,8 @@ input{
   display: inline-block;
   margin: 4px 2px;
 }
+
+
 
 @media (prefers-reduced-motion: no-preference) {
   .Logo{
