@@ -1,7 +1,7 @@
 import { connect } from "react-redux"; 
-import { getUsers } from "../ducks/users/selectors";
-import { getNfts } from "../ducks/nfts/selectors";
-import { getCollections } from "../ducks/collections/selectors";
+import { getUsers } from "../../ducks/users/selectors";
+import { getNfts } from "../../ducks/nfts/selectors";
+import { getCollections } from "../../ducks/collections/selectors";
 import { Link } from "react-router-dom";
 
 const Dashboard = ({users, collections, nfts}) => {
@@ -27,6 +27,9 @@ const Dashboard = ({users, collections, nfts}) => {
                 //kto ma nawięcj
                 //
             }
+                
+            <p><Link to="/" className="Btn Delete">Load</Link></p>
+              
         </div>
     )
 };

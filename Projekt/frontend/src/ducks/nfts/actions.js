@@ -19,3 +19,8 @@ export const nftEditAction = (nft) => ({
     type: types.NFT_EDIT,
     payload: nft
 });
+
+export const nftSotrAction = (nfts) =>({
+    type: types.NFT_SORT,
+    payload: nfts
+})

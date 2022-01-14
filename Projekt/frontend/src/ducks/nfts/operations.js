@@ -43,7 +43,7 @@ export const createNft = (newNft, id) => {
                 dispatch(actions.nftCreateAction(response.data));
         } catch(ex) {
             console.log(ex)
-    }
+        }
     }
 }
 
@@ -56,6 +56,16 @@ export const editNft = (nft) => {
                 console.log(response.data);
         } catch(ex) {
             console.log(ex)
+        }
     }
+}
+
+export const sortNft = (nfts) =>{
+    return async dispatch => {
+        try{
+            dispatch(actions.nftSotrAction(nfts))
+        } catch(ex) {
+            console.log(ex)
+        }
     }
 }

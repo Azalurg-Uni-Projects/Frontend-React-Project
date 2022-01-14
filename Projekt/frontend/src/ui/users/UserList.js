@@ -3,9 +3,9 @@ import { getUsers } from "../../ducks/users/selectors";
 import { Link } from "react-router-dom";
 import { sortUser } from "../../ducks/users/operations";
 
-const _ = require('lodash');
-
 const UserList = ({ users, sortUser } ,props) => {
+
+    const _ = require('lodash');
 
     const sort = (x) => {
         const users_sorted = _.chain(_.sortBy(users,[x])).forEach().value()
@@ -21,7 +21,7 @@ const UserList = ({ users, sortUser } ,props) => {
                         Sort:
                     </label>
                     <select id="sort" onChange={(x) => (sort(x.target.value))}>
-                        <option value="id">-------------</option>
+                        <option value="_id">-------------</option>
                         <option value="nickname">nickname</option>
                         <option value="registration_date">join date</option>
                         <option value="birthday">birthday</option>

@@ -6,8 +6,8 @@ import {
   Link
 } from "react-router-dom";
 
-import Restart from './ui/restart.js';
-import Dashboard from './ui/dashboard.js'
+import Restart from './ui/home/restart.js';
+import Dashboard from './ui/home/dashboard.js'
 
 import UserList from './ui/users/UserList';
 import NftList from './ui/nfts/NftList';
@@ -33,9 +33,6 @@ function App() {
         <section className="Topbar">
           <nav>
             <ul>
-              <li>
-                <Link to="/" className="Btn Delete">Load</Link>
-              </li>
               <li>
                 <Link to="/dashboard" className="Btn">Dashboard</Link>
               </li>
