@@ -111,12 +111,11 @@ input:focus {
 .ListContainer{
   padding: 10px 40px;
   border: 1px solid #24A29E;
-  margin-bottom: 20px
-}
-
-.ListContainer > button{ 
-  display: inline-block
-}
+  margin-bottom: 20px;
+  img:hover{
+  cursor: pointer;
+  }
+} 
 
 ul{
   list-style-type: none;
@@ -191,6 +190,21 @@ input, select{
   .Logo{
     animation: App-logo-float infinite 0.8s ease-in-out;
   }
+  .Small-img:hover{
+    animation: Small-img both 1s ease
+  }
+}
+
+@keyframes Small-img {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.1)
+
+  }
+  
 }
 
 @keyframes App-logo-float {
