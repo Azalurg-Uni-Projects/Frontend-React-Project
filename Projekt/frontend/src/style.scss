@@ -1,3 +1,7 @@
+html{
+  scroll-behavior: smooth;
+}
+
 body{
   text-align: center;
   color: #C5C6C7;
@@ -191,7 +195,7 @@ input, select{
     animation: App-logo-float infinite 0.8s ease-in-out;
   }
   .Small-img:hover{
-    animation: Small-img both 1s ease
+    animation: Small-img both 0.6s ease
   }
 }
 

@@ -20,3 +20,8 @@ export const userDeleteAction = (user) => ({
     type: types.USER_DELETE,
     payload: user
 });
+
+export const userSortAction = (users) => ({
+    type: types.USER_SORT,
+    payload: users
+});

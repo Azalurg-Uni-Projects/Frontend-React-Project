@@ -1,20 +1,37 @@
 import { connect } from "react-redux"; 
 import { getUsers } from "../../ducks/users/selectors";
-import { deleteUser } from "../../ducks/users/operations";
 import { Link } from "react-router-dom";
+import { sortUser } from "../../ducks/users/operations";
 
-const UserList = ({ users, deleteUser } ,props) => {
+const _ = require('lodash');
+
+const UserList = ({ users, sortUser } ,props) => {
+
+    const sort = (x) => {
+        const users_sorted = _.chain(_.sortBy(users,[x])).forEach().value()
+        sortUser(users_sorted)
+    }
 
     return(
         <div>
             <h1>Users List</h1>
-            <ul>
-                <div>Sort: </div>
+            <ul className="sortbar">
                 <li>
-
+                    <label htmlFor="sort">
+                        Sort:
+                    </label>
+                    <select id="sort" onChange={(x) => (sort(x.target.value))}>
+                        <option value="id">-------------</option>
+                        <option value="nickname">nickname</option>
+                        <option value="registration_date">join date</option>
+                        <option value="birthday">birthday</option>
+                    </select>
+                </li>
+                <li>
+                    <Link to={'/users/create'} className="Btn">Create User</Link>
                 </li>
             </ul>
-            <Link to={'/users/create'} className="Btn">Create User</Link>
+            
             <div className="List">
                 {users ? users.map(user =>(
                     <div key={user._id} className="ListContainer">
@@ -35,7 +52,7 @@ const mapStateToProps = (state) => {
     };
 }
 const mapDispatchToProps = {
-    deleteUser
+    sortUser
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserList);

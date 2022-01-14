@@ -49,3 +49,12 @@ export const editUser = (user) => {
         }
     }
 }
+export const sortUser = (users) => {
+    return async dispatch =>{
+        try{
+            dispatch(actions.userSortAction(users))
+        }catch(ex) {
+            console.log(ex)
+        }
+    }
+}
