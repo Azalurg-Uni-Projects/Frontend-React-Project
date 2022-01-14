@@ -4,12 +4,11 @@ import { createNft } from '../../ducks/nfts/operations';
 import { withRouter } from "react-router";
 import { nftSchema } from './NftSchema';
 
-// Dodać historię i walidację danych
 const NftCreate = ({ createNft, history }, props) => {
-
     const handleSubmit = (values) => {
-        createNft(values);
-        history.push('/nft')
+        let id = window.location.pathname.slice(13)
+        createNft(values, id);
+        history.push('/nfts')
     }
 
     return (
@@ -30,34 +29,34 @@ const NftCreate = ({ createNft, history }, props) => {
                 <Form className="Input">
                     <ol className="Left">
                         <li>
-                            <label htmlFor="title">Nickname: </label>  
+                            <label htmlFor="title">Title: </label>  
                             <Field name="title" type="text" id="title"/>  
                             <ErrorMessage name="title" component="p" className='Delete'/> 
                         </li>
                         <li>
-                            <label htmlFor="price">Nickname: </label>  
+                            <label htmlFor="price">Price: </label>  
                             <Field name="price" type="text" id="price"/>  
                             <ErrorMessage name="price" component="p" className='Delete'/> 
                         </li>
                         <li>
-                            <label htmlFor="currency">Nickname: </label>  
+                            <label htmlFor="currency">Currency: </label>  
                             <Field name="currency" type="text" id="currency"/>  
                             <ErrorMessage name="currency" component="p" className='Delete'/> 
                         </li>
                     </ol>
                     <ol className="Right">
                         <li>
-                            <label htmlFor="image_url">Nickname: </label>  
+                            <label htmlFor="image_url">Image url: </label>  
                             <Field name="image_url" type="text" id="image_url"/>  
                             <ErrorMessage name="image_url" component="p" className='Delete'/> 
                         </li>
                         <li>
-                            <label htmlFor="url">Nickname: </label>  
+                            <label htmlFor="url">Source url: </label>  
                             <Field name="url" type="text" id="url"/>  
                             <ErrorMessage name="url" component="p" className='Delete'/> 
                         </li>
                         <li>
-                            <label htmlFor="description">Nickname: </label>  
+                            <label htmlFor="description">Description: </label>  
                             <Field name="description" type="text" id="description"/>  
                             <ErrorMessage name="description" component="p" className='Delete'/> 
                         </li>

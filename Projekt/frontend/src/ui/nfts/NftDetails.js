@@ -23,16 +23,17 @@ const NftDetails =({ users, collections, nfts, deleteNft, history } ,props) => {
                     <h3>Nft data</h3>
                     <p>price: {nft.price} {nft.currency}</p>
                     <p>created date: {new Date(nft.created_date).toLocaleDateString('pl-PL')}</p>
-                    {collection ? <p>collection: <Link className="Link" to={`/collections/details/${collection._id}`}>{collection.name}</Link></p>  : <p>None</p>}
-                    {author ? <p>author: <Link className="Link" to={`/users/details/${author._id}`}>{author.nickname}</Link></p> : <p>None</p>} 
-                    {owner ? <p>owner: <Link className="Link" to={`/users/details/${owner._id}`}>{owner.nickname}</Link></p> : <p>None</p>}
+                    {collection ? <p>collection: <Link className="Link" to={`/collections/details/${collection._id}`}>{collection.name}</Link></p>  : <></>}
+                    {author ? <p>author: <Link className="Link" to={`/users/details/${author._id}`}>{author.nickname}</Link></p> : <></>} 
+                    {owner ? <p>owner: <Link className="Link" to={`/users/details/${owner._id}`}>{owner.nickname}</Link></p> : <></>}
+                    <Link className="Btn" to={`/nfts/edit/${id}`}>Edit</Link>
                     <button className="Btn Delete" onClick={() => {deleteNft(nft); history.push("/nfts")}}>Delete</button>
                 </section>
             </div>
             <div className="Colleted">  
                 <section>
                 <h1>{nft.title}</h1>
-                <img src={nft.image_url} alt = "NFT NOT FOUND"/>
+                <img src={nft.image_url} alt = "NFT NOT FOUND" className="Large-img"/>
                 <p>{nft.description}</p>
                 </section>
             </div>

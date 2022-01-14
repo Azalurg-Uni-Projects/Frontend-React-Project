@@ -7,7 +7,7 @@ import { userSchema } from './UserSchema';
 
 const UserCreate = ({ createUser, history }, props) => {
 
-    const handleSubmit = (values) => {
+    const handleSubmit = (values) => {  
         createUser(values);
         history.push('/users')
     }

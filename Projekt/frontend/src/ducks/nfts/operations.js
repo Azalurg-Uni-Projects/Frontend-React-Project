@@ -35,10 +35,10 @@ export const deleteNft = (nft) => {
     }
 }
 
-export const createNft = (newNft) => {
+export const createNft = (newNft, id) => {
     return async dispatch => {
         try {
-            const response = await axios.post('http://localhost:5000/nfts', newNft);
+            const response = await axios.post(`http://localhost:5000/nfts/${id}`, newNft);
             if(response.status === 200) 
                 dispatch(actions.nftCreateAction(response.data));
         } catch(ex) {

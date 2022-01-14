@@ -50,6 +50,10 @@ body{
     "description description"
     "submmit submit";
 
+  ol {
+      list-style-type: none;
+  }
+
   .Left{
     text-align: left;
     grid-area: left;
