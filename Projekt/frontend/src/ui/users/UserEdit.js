@@ -4,7 +4,7 @@ import { editUser } from '../../ducks/users/operations';
 import { withRouter } from "react-router";
 import { userSchema } from './UserSchema';
 import { getUsers } from '../../ducks/users/selectors';
-
+import { Link } from "react-router-dom";
 
 const UserEdit = ({ users, editUser, history }, props) => {
     let id = window.location.pathname.slice(12)
@@ -80,6 +80,7 @@ const UserEdit = ({ users, editUser, history }, props) => {
                         <ErrorMessage name="description" component="p" className='Delete'/> 
                     </div>
                     <div className="Submit">
+                        <Link to={`/users/details/${id}`}className="Btn">Back</Link>
                         <button type="submit" className="Btn">Edit</button>
                     </div>
                 </Form>

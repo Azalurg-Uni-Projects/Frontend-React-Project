@@ -3,10 +3,11 @@ import { connect } from 'react-redux';
 import { createNft } from '../../ducks/nfts/operations';
 import { withRouter } from "react-router";
 import { nftSchema } from './NftSchema';
+import { Link } from "react-router-dom";
 
 const NftCreate = ({ createNft, history }, props) => {
+    let id = window.location.pathname.slice(13)
     const handleSubmit = (values) => {
-        let id = window.location.pathname.slice(13)
         createNft(values, id);
         history.push('/nfts')
     }
@@ -66,6 +67,7 @@ const NftCreate = ({ createNft, history }, props) => {
                         </li>
                     </ol>
                     <div className="Submit">
+                        <Link to={`/users/details/${id}`}className="Btn">Back</Link>
                         <button type="submit" className="Btn">Create</button>
                     </div>
                 </Form>

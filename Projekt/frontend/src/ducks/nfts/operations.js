@@ -53,7 +53,6 @@ export const editNft = (nft) => {
             const response = await axios.put(`http://localhost:5000/nfts/${nft._id}`, nft);
             if(response.status === 200) 
                 dispatch(actions.nftEditAction(response.data));
-                console.log(response.data);
         } catch(ex) {
             console.log(ex)
         }

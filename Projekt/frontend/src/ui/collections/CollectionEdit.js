@@ -4,6 +4,8 @@ import { editCollection } from '../../ducks/collections/operations';
 import { withRouter } from "react-router";
 import { collectionSchema } from './CollectionSchema';
 import { getCollections } from '../../ducks/collections/selectors';
+import { Link } from "react-router-dom";
+
 
 const CollectionEdit = ({ editCollection, history, collections }, props) => {
 
@@ -48,6 +50,7 @@ const CollectionEdit = ({ editCollection, history, collections }, props) => {
                         </li>
                     </ol>
                     <div className="Submit">
+                        <Link to={`/collections/details/${id}`}className="Btn">Back</Link>
                         <button type="submit" className="Btn">Edit</button>
                     </div>
                 </Form>

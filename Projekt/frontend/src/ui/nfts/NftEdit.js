@@ -4,14 +4,18 @@ import { editNft } from '../../ducks/nfts/operations';
 import { withRouter } from "react-router";
 import { nftSchema } from './NftSchema';
 import { getNfts } from '../../ducks/nfts/selectors';
+import { getCollections } from "../../ducks/collections/selectors";
+import { getUsers } from "../../ducks/users/selectors";
+import { Link } from "react-router-dom";
 
-const NftEdit = ({ editNft, history, nfts }, props) => {
+
+const NftEdit = ({ editNft, history, nfts, users, collections}, props) => {
     let id = window.location.pathname.slice(11)
     const nft = nfts.find(nft => nft._id === id)
 
     const handleSubmit = (values) => {
         editNft(values);
-        history.push('/nfts')
+        history.push(`/nfts/details/${id}`)
     }
 
     return (
@@ -43,6 +47,15 @@ const NftEdit = ({ editNft, history, nfts }, props) => {
                             </Field> 
                             <ErrorMessage name="currency" component="p" className='Delete'/> 
                         </li>
+                        <li>
+                            <label htmlFor="collection_id">Collection: </label>  
+                            <Field name="collection_id" as="select" id="collection_id">
+                            {collections ? collections.map(collection =>(
+                                    <option key={collection._id} value={collection._id}>{collection.name}</option>
+                            )): <> </>} 
+                            </Field>
+                            <ErrorMessage name="collection_id" component="p" className='Delete'/> 
+                        </li>
                     </ol>
                     <ol className="Right">
                         <li>
@@ -60,8 +73,18 @@ const NftEdit = ({ editNft, history, nfts }, props) => {
                             <Field name="description" type="text" id="description"/>  
                             <ErrorMessage name="description" component="p" className='Delete'/> 
                         </li>
+                        <li>
+                            <label htmlFor="owner_id">Description: </label>  
+                            <Field name="owner_id" as="select" id="owner_id">
+                            {users ? users.map(user =>(
+                                    <option key={user._id} value={user._id}>{user.nickname}</option>
+                            )): <> </>} 
+                            </Field>
+                            <ErrorMessage name="owner_id" component="p" className='Delete'/> 
+                        </li>
                     </ol>
                     <div className="Submit">
+                        <Link to={`/nfts/details/${id}`}className="Btn">Back</Link>
                         <button type="submit" className="Btn">Edit</button>
                     </div>
                 </Form>
@@ -72,7 +95,9 @@ const NftEdit = ({ editNft, history, nfts }, props) => {
 
 const mapStateToProps = (state) => {
     return {
-        nfts: getNfts(state)
+        users: getUsers(state),
+        nfts: getNfts(state),
+        collections: getCollections(state)
     };   
 }
 

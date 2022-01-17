@@ -33,7 +33,7 @@ const UserDetails = ({ users, collections, nfts, deleteUser, history } ,props) =
                     <p>phone number: {user.phone_number}</p>
                     
                     {created_collections ? 
-                    <div>
+                    <div key="random">
                         created collections:
                         {created_collections.map(collection =>(
                             <p><Link className="Link" to={`/collections/details/${collection._id}`} key={collection._id}> - {collection.name}</Link></p>))}
@@ -90,3 +90,6 @@ const mapDispatchToProps = {
 }
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(UserDetails));
+
+
+// somewhere here is problem with key

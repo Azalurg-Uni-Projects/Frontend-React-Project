@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { createUser } from '../../ducks/users/operations';
 import { withRouter } from "react-router";
 import { userSchema } from './UserSchema';
-
+import { Link } from "react-router-dom";
 
 const UserCreate = ({ createUser, history }, props) => {
 
@@ -88,6 +88,7 @@ const UserCreate = ({ createUser, history }, props) => {
                         <ErrorMessage name="description" component="p" className='Delete'/> 
                     </div>
                     <div className="Submit">
+                        <Link to={`/users`} className="Btn">Back</Link>
                         <button type="submit" className="Btn">Create</button>
                     </div>
                 </Form>

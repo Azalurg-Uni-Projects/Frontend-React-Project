@@ -52,7 +52,7 @@ router.put('/:collection_id', async (req, res) => {
 
   Nft
     .findByIdAndUpdate(id, {...req.body})
-    .then(ans => res.status.json(ans))
+    .then(ans => res.status.json(req.body))
     .catch(err => res.status(500).json(err));
 });
 

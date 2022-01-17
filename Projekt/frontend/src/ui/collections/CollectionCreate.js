@@ -3,12 +3,12 @@ import { connect } from 'react-redux';
 import { createCollection } from '../../ducks/collections/operations';
 import { withRouter } from "react-router";
 import { collectionSchema } from './CollectionSchema';
+import { Link } from "react-router-dom";
 
 
 const CollectionCreate = ({ createCollection, history }, props) => {
-
+    let id = window.location.pathname.slice(20)
     const handleSubmit = (values) => {  
-        let id = window.location.pathname.slice(20)
         createCollection(values, id);
         history.push('/collections')
     }
@@ -45,6 +45,7 @@ const CollectionCreate = ({ createCollection, history }, props) => {
                         </li> 
                     </ol>
                     <div className="Submit">
+                        <Link to={`/users/details/${id}`}className="Btn">Back</Link>
                         <button type="submit" className="Btn">Create</button>
                     </div>
                 </Form>

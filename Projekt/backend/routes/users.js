@@ -57,7 +57,7 @@ router.put('/:user_id', async (req, res) => {
 
   Users
     .findByIdAndUpdate(id, {...req.body})
-    .then(ans => res.json(ans))
+    .then(ans => res.json(req.body))
     .catch(err => res.status(500).json(err));
 
 });
