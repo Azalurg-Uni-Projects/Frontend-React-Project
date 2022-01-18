@@ -1,4 +1,0 @@
-# TODO
-
-- sortowanie kolekcji
-- język
