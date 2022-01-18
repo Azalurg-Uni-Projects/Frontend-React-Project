@@ -83,6 +83,29 @@ body{
   padding: 20px
 }
 
+.Dashboard{
+  table{
+    display: flex;
+    justify-content: space-around;
+
+    td{
+      border: 1px solid white;
+      padding: 10px 20px;
+      color: #24A29E;
+      font-size: 1.5rem;
+      letter-spacing: 1px;
+    }
+    th{
+      border: 1px solid white;
+      padding: 10px 20px;
+      color: #24A29E;
+      font-size: 1.5rem;
+      letter-spacing: 1px;
+    }
+  }
+  
+}
+
 .Small-img{
   height: 200px;
   width: 200px;
