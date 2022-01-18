@@ -43,7 +43,6 @@ const Dashboard = ({users, collections, nfts}) => {
         for (var i = 0; i < max.length; i++) {
             const x = Object.keys(count).find(key => count[key] === max[i])
             const collection = collections.find(collection => collection._id === x)
-            console.log(collection);
             if (collection){
                 return(collection);
             }

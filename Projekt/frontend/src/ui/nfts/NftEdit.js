@@ -74,7 +74,7 @@ const NftEdit = ({ editNft, history, nfts, users, collections}, props) => {
                             <ErrorMessage name="description" component="p" className='Delete'/> 
                         </li>
                         <li>
-                            <label htmlFor="owner_id">Description: </label>  
+                            <label htmlFor="owner_id">Owner: </label>  
                             <Field name="owner_id" as="select" id="owner_id">
                             {users ? users.map(user =>(
                                     <option key={user._id} value={user._id}>{user.nickname}</option>

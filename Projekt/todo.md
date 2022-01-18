@@ -1,4 +1,4 @@
 # TODO
 
-- statystyki
+- sortowanie kolekcji
 - język

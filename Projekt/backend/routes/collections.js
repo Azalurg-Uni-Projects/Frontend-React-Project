@@ -50,9 +50,9 @@ router.delete('/:collection_id', async (req, res) => {
 router.put('/:collection_id', async (req, res) => {
   const id = req.params.collection_id;
 
-  Nft
-    .findByIdAndUpdate(id, {...req.body})
-    .then(ans => res.status.json(req.body))
+  Collection
+    .findByIdAndUpdate(id, {...req.body}, {new: true})
+    .then(ans => res.status(200).json(ans))
     .catch(err => res.status(500).json(err));
 });
 
