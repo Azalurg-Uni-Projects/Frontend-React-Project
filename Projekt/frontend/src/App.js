@@ -7,7 +7,8 @@ import {
 } from "react-router-dom";
 
 import Restart from './ui/home/restart.js';
-import Dashboard from './ui/home/dashboard.js'
+import Dashboard from './ui/home/dashboard.js';
+import Error from './ui/home/error.js' 
 
 import UserList from './ui/users/UserList';
 import NftList from './ui/nfts/NftList';
@@ -49,24 +50,25 @@ function App() {
           </nav>
         </section>
       <Switch>
-        <Route path="/collections/create" component={CollectionCreate}/>
-        <Route path="/nfts/create" component={NftCreate}/>
-        <Route path="/users/create" component={UserCreate}/>
+        <Route exact path="/collections/create" component={CollectionCreate}/>
+        <Route exact path="/nfts/create" component={NftCreate}/>
+        <Route exact path="/users/create" component={UserCreate}/>
         
-        <Route path="/collections/edit/:collection_id" component={CollectionEdit}/>
-        <Route path="/nfts/edit/:nft_id" component={NftEdit}/>
-        <Route path="/users/edit/:user_id" component={UserEdit}/>
+        <Route exact path="/collections/edit/:collection_id" component={CollectionEdit}/>
+        <Route exact path="/nfts/edit/:nft_id" component={NftEdit}/>
+        <Route exact path="/users/edit/:user_id" component={UserEdit}/>
 
-        <Route path="/collections/details/:collection_id" component={CollectionDetails}/>
-        <Route path="/nfts/details/:nft_id" component={NftDetails}/>
-        <Route path="/users/details/:user_id" component={UserDetails}/>
+        <Route exact path="/collections/details/:collection_id" component={CollectionDetails}/>
+        <Route exact path="/nfts/details/:nft_id" component={NftDetails}/>
+        <Route exact path="/users/details/:user_id" component={UserDetails}/>
 
-        <Route path="/collections" component={CollectionList}/>
-        <Route path="/nfts" component={NftList}/>
-        <Route path="/users" component={UserList}/>
+        <Route exact path="/collections" component={CollectionList}/>
+        <Route exact path="/nfts" component={NftList}/>
+        <Route exact path="/users" component={UserList}/>
 
-        <Route path="/dashboard" component={Dashboard}/>
-        <Route path="/" component={Restart}/>
+        <Route exact path="/dashboard" component={Dashboard}/>
+        <Route exact path="/" component={Restart}/>
+        <Route component={Error}/>
       </Switch>
       </div>
     </Router>
