@@ -5,10 +5,12 @@ import { withRouter } from "react-router";
 import { userSchema } from './UserSchema';
 import { getUsers } from '../../ducks/users/selectors';
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const UserEdit = ({ users, editUser, history }, props) => {
     let id = window.location.pathname.slice(12)
     const user = users.find(user => user._id === id)
+    const { t } = useTranslation();
     
     const handleSubmit = (values) => {
         editUser(values);
@@ -17,7 +19,7 @@ const UserEdit = ({ users, editUser, history }, props) => {
 
     return (
         <div>
-            <h3>Edit User</h3>
+            <h3>{t("Edit User")}</h3>
             <Formik
                 initialValues={user}
                 onSubmit={(values) => handleSubmit(values)}
@@ -27,34 +29,34 @@ const UserEdit = ({ users, editUser, history }, props) => {
                 <Form className="Input">
                     <ol className="Left">
                         <li>
-                            <label htmlFor="nickname">Nickname: </label>  
+                            <label htmlFor="nickname">{t("Nickname")}: </label>  
                             <Field name="nickname" type="text" id="nickname"/>  
                             <ErrorMessage name="nickname" component="p" className='Delete'/> 
                         </li>
                         <li>
-                            <label htmlFor="firstname">Firstname: </label>  
+                            <label htmlFor="firstname">{t("Firstname")}: </label>  
                             <Field name="firstname" type="text" id="firstname"/>  
                             <ErrorMessage name="firstname" component="p" className='Delete'/>
                         </li>
                         <li>
-                            <label htmlFor="lastname">Lastname: </label>  
+                            <label htmlFor="lastname">{t("Lastname")}: </label>  
                             <Field name="lastname" type="text" id="lastname"/>  
                             <ErrorMessage name="lastname" component="p" className='Delete'/> 
                         </li>
                         <li>
-                            <label htmlFor="place_of_origin">Place of origin: </label>  
+                            <label htmlFor="place_of_origin">{t("Place of origin")}: </label>  
                             <Field name="place_of_origin" type="text" id="place_of_origin"/>  
                             <ErrorMessage name="place_of_origin" component="p" className='Delete'/> 
                         </li>   
                     </ol>
                     <ol className="Right">
                         <li>
-                            <label htmlFor="phone_number">Phone number: </label>  
+                            <label htmlFor="phone_number">{t("Phone number")}: </label>  
                             <Field name="phone_number" type="tel" placeholder="123-456-789" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" id="phone_number"/>  
                             <ErrorMessage name="phone_number" component="p" className='Delete'/> 
                         </li>
                         <li>
-                            <label htmlFor="birthday">Birthday: </label>  
+                            <label htmlFor="birthday">{t("Birthday")}: </label>  
                             <Field name="birthday" type="date" id="birthday"/>  
                             <ErrorMessage name="birthday" component="p" className='Delete'/>
                         </li>
@@ -75,13 +77,13 @@ const UserEdit = ({ users, editUser, history }, props) => {
                         <ErrorMessage name="email" component="p" className='Delete'/> 
                     </div>
                     <div className="Description">
-                        <label htmlFor="description">Description: </label>  
+                        <label htmlFor="description">{t("Description")}: </label>  
                         <Field name="description" type="text" id="description"/>  
                         <ErrorMessage name="description" component="p" className='Delete'/> 
                     </div>
                     <div className="Submit">
-                        <Link to={`/users/details/${id}`}className="Btn">Back</Link>
-                        <button type="submit" className="Btn">Edit</button>
+                        <Link to={`/users/details/${id}`}className="Btn">{t("Back")}</Link>
+                        <button type="submit" className="Btn">{t("Edit")}</button>
                     </div>
                 </Form>
             </Formik>

@@ -1,12 +1,14 @@
 import { connect } from "react-redux"; 
 import { getCollections } from "../../ducks/collections/selectors";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next"
 
 const CollectionList = ({ collections } ,props) => {
+    const { t } = useTranslation()
 
     return(
         <div>
-            <h1>Collections List</h1>
+            <h1>{t("Collections List")}</h1>
             <div className="List">
                 {collections ? collections.map(collection =>(
                     <div key={collection._id} className="ListContainer">
@@ -15,7 +17,7 @@ const CollectionList = ({ collections } ,props) => {
                         </Link>
                         <p>{collection.name}</p>
                     </div>
-                )) : <div>No one here</div>}
+                )) : <></>}
             </div>
         </div>
     )

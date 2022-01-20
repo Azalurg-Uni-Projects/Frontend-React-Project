@@ -2,10 +2,12 @@ import { connect } from "react-redux";
 import { getUsers } from "../../ducks/users/selectors";
 import { Link } from "react-router-dom";
 import { sortUser } from "../../ducks/users/operations";
+import { useTranslation } from "react-i18next";
 
 const UserList = ({ users, sortUser } ,props) => {
 
     const _ = require('lodash');
+    const { t } = useTranslation();
 
     const sort = (x) => {
         const users_sorted = _.chain(_.sortBy(users,[x])).forEach().value()
@@ -14,21 +16,21 @@ const UserList = ({ users, sortUser } ,props) => {
 
     return(
         <div>
-            <h1>Users List</h1>
+            <h1>{t("Users List")}</h1>
             <ul className="sortbar">
                 <li>
                     <label htmlFor="sort">
-                        Sort:
+                        {t("Sort")}:
                     </label>
                     <select id="sort" onChange={(x) => (sort(x.target.value))}>
                         <option value="_id">-------------</option>
-                        <option value="nickname">nickname</option>
-                        <option value="registration_date">join date</option>
-                        <option value="birthday">birthday</option>
+                        <option value="nickname">{t("nickname")}</option>
+                        <option value="registration_date">{t("join date")}</option>
+                        <option value="birthday">{t("birthday")}</option>
                     </select>
                 </li>
                 <li>
-                    <Link to={'/users/create'} className="Btn">Create User</Link>
+                    <Link to={'/users/create'} className="Btn">{t("Create User")}</Link>
                 </li>
             </ul>
             
@@ -40,7 +42,7 @@ const UserList = ({ users, sortUser } ,props) => {
                         </Link>
                         <p>{user.nickname}</p>
                     </div>
-                )) : <div>No one here</div>}
+                )) : <></>}
             </div>
         </div>
     )

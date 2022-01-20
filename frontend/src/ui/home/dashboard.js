@@ -3,6 +3,7 @@ import { getUsers } from "../../ducks/users/selectors";
 import { getNfts } from "../../ducks/nfts/selectors";
 import { getCollections } from "../../ducks/collections/selectors";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const Dashboard = ({users, collections, nfts}) => {
     const _ = require('lodash');
@@ -24,7 +25,7 @@ const Dashboard = ({users, collections, nfts}) => {
     }
     const owner = own_most()
 
-    const bigest_artist = () => {
+    const biggest_artist = () => {
         const count = _.countBy(nfts, 'author_id')
         var max = Object.values(count).sort().reverse()
         for (var i = 0; i < max.length; i++) {
@@ -35,9 +36,9 @@ const Dashboard = ({users, collections, nfts}) => {
             }
         }
     }
-    const author = bigest_artist()
+    const author = biggest_artist()
 
-    const bigest_collection = () => {
+    const biggest_collection = () => {
         const count = _.countBy(nfts, 'collection_id')
         var max = Object.values(count).sort().reverse()
         for (var i = 0; i < max.length; i++) {
@@ -48,7 +49,7 @@ const Dashboard = ({users, collections, nfts}) => {
             }
         }
     }
-    const collection = bigest_collection()
+    const collection = biggest_collection()
 
     const nft_warht_most = () =>{
         const nfts_sorted = _.chain(_.sortBy(nfts,['price'])).forEach().reverse().value()
@@ -58,12 +59,14 @@ const Dashboard = ({users, collections, nfts}) => {
 
     // const collection_warht_most
 
+    const { t } = useTranslation()
+
     return (
         <div className="Dashboard">
             <table>
                 <tbody>
                     <tr>
-                        <th>Users</th> 
+                        <th>{t("Users")}</th> 
                         <td>{sum_users}</td> 
                         
                         
@@ -74,7 +77,7 @@ const Dashboard = ({users, collections, nfts}) => {
                         
                     </tr>
                     <tr>
-                        <th>Collections</th>
+                        <th>{t("Collections")}</th>
                         <td>{sum_collections}</td>
                     </tr>
                 </tbody>
@@ -83,7 +86,7 @@ const Dashboard = ({users, collections, nfts}) => {
             <div className="List">
             {owner ? 
                 <div className="ListContainer"> 
-                    <h2>Bigest owner</h2>
+                    <h2>{t("Biggest owner")}</h2>
                     <Link to={`/users/details/${owner._id}`}>
                         <img className="Small-img Circle" src={owner.logo_url} alt = "404"/>
                     </Link>
@@ -92,7 +95,7 @@ const Dashboard = ({users, collections, nfts}) => {
             }
             {author ? 
                 <div className="ListContainer"> 
-                    <h2>Bigest artist</h2>
+                    <h2>{t("Biggest artist")}</h2>
                     <Link to={`/users/details/${author._id}`}>
                         <img className="Small-img Circle" src={author.logo_url} alt = "404"/>
                     </Link>
@@ -101,7 +104,7 @@ const Dashboard = ({users, collections, nfts}) => {
             }
             {collection ? 
                 <div className="ListContainer"> 
-                    <h2>Bigest Collection</h2>
+                    <h2>{t("Biggest collection")}</h2>
                     <Link to={`/collections/details/${collection._id}`}>
                         <img className="Small-img Circle" src={collection.img_url} alt = "404"/>
                     </Link>
@@ -110,7 +113,7 @@ const Dashboard = ({users, collections, nfts}) => {
             }
             {collection ? 
                 <div className="ListContainer"> 
-                    <h2>Most expensive NFT</h2>
+                    <h2>{t("Most expensive NFT")}</h2>
                     <Link to={`/nfts/details/${nft._id}`}>
                         <img className="Small-img Circle" src={nft.image_url} alt = "404"/>
                     </Link>
@@ -120,7 +123,7 @@ const Dashboard = ({users, collections, nfts}) => {
             </div>
             
     
-            <p><Link to="/" className="Btn Delete">Load</Link></p>
+            <p><Link to="/" className="Btn Delete">{t("Load")}</Link></p>
               
         </div>
     )

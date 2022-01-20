@@ -4,9 +4,11 @@ import { createNft } from '../../ducks/nfts/operations';
 import { withRouter } from "react-router";
 import { nftSchema } from './NftSchema';
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const NftCreate = ({ createNft, history }, props) => {
     let id = window.location.pathname.slice(13)
+    const { t } = useTranslation();
     const handleSubmit = (values) => {
         createNft(values, id);
         history.push('/nfts')
@@ -14,7 +16,7 @@ const NftCreate = ({ createNft, history }, props) => {
 
     return (
         <div>
-            <h3>Create Nft</h3>
+            <h3>{t("Create Nft")}</h3>
             <Formik
                 initialValues={{
                     title: "",
@@ -30,17 +32,17 @@ const NftCreate = ({ createNft, history }, props) => {
                 <Form className="Input">
                     <ol className="Left">
                         <li>
-                            <label htmlFor="title">Title: </label>  
+                            <label htmlFor="title">{t("Title")}: </label>  
                             <Field name="title" type="text" id="title"/>  
                             <ErrorMessage name="title" component="p" className='Delete'/> 
                         </li>
                         <li>
-                            <label htmlFor="price">Price: </label>  
+                            <label htmlFor="price">{t("Price")}: </label>  
                             <Field name="price" type="number" id="price"/>  
                             <ErrorMessage name="price" component="p" className='Delete'/> 
                         </li>
                         <li>
-                            <label htmlFor="currency">Currency: </label>  
+                            <label htmlFor="currency">{t("Currency")}: </label>  
                             <Field name="currency" as="select" id="image_url">  
                                 <option value="ETH">ETH</option>
                                 <option value="USD">USD</option>
@@ -51,24 +53,24 @@ const NftCreate = ({ createNft, history }, props) => {
                     </ol>
                     <ol className="Right">
                         <li>
-                            <label htmlFor="image_url">Image url: </label>  
+                            <label htmlFor="image_url">{t("Image url")}: </label>  
                             <Field name="image_url" type="text" id="image_url"/>  
                             <ErrorMessage name="image_url" component="p" className='Delete'/> 
                         </li>
                         <li>
-                            <label htmlFor="url">Source url: </label>  
+                            <label htmlFor="url">{t("Source url")}: </label>  
                             <Field name="url" type="text" id="url"/>  
                             <ErrorMessage name="url" component="p" className='Delete'/> 
                         </li>
                         <li>
-                            <label htmlFor="description">Description: </label>  
+                            <label htmlFor="description">{t("Description")}: </label>  
                             <Field name="description" type="text" id="description"/>  
                             <ErrorMessage name="description" component="p" className='Delete'/> 
                         </li>
                     </ol>
                     <div className="Submit">
-                        <Link to={`/users/details/${id}`}className="Btn">Back</Link>
-                        <button type="submit" className="Btn">Create</button>
+                        <Link to={`/users/details/${id}`}className="Btn">{t("Back")}</Link>
+                        <button type="submit" className="Btn">{t("Create")}</button>
                     </div>
                 </Form>
             </Formik>

@@ -2,6 +2,7 @@ import { connect } from "react-redux";
 import { getNfts } from "../../ducks/nfts/selectors";
 import { Link } from "react-router-dom";
 import { sortNft } from '../../ducks/nfts/operations'
+import { useTranslation } from "react-i18next";
 
 const NftList = ({ nfts, sortNft} ,props) => {
     // function shuffleArray(array) {
@@ -15,7 +16,7 @@ const NftList = ({ nfts, sortNft} ,props) => {
     // }
     // nfts = shuffleArray(nfts)
     const _ = require('lodash');
-
+    const { t } = useTranslation();
     const sort = (x) => {
         const nfts_sorted = _.chain(_.sortBy(nfts,[x])).forEach().value()
         sortNft(nfts_sorted)
@@ -23,7 +24,7 @@ const NftList = ({ nfts, sortNft} ,props) => {
 
     return(
         <div>
-            <h1>Nfts List</h1>
+            <h1>{t("Nfts List")}</h1>
             <ul className="sortbar">
                 <li>
                     <label htmlFor="sort">
@@ -31,12 +32,11 @@ const NftList = ({ nfts, sortNft} ,props) => {
                     </label>
                     <select id="sort" onChange={(x) => (sort(x.target.value))}>
                         <option value="_id">-------------</option>
-                        <option value="author_id">author</option>
-                        <option value="owner_id">owner</option>
-                        <option value="collection_id">collection</option>
-                        <option value="collection_id">collection</option>
-                        <option value="price">price (lowest)</option>
-                        <option value="created_date">created date</option>
+                        <option value="author_id">{t("author")}</option>
+                        <option value="owner_id">{t("owner")}</option>
+                        <option value="collection_id">{t("collection")}</option>
+                        <option value="price">{t("price (lowest)")}</option>
+                        <option value="created_date">{t("created date")}</option>
                     </select>
                 </li>
             </ul>
@@ -48,7 +48,7 @@ const NftList = ({ nfts, sortNft} ,props) => {
                         </Link>
                         <p>{nft.title}</p>
                     </div>
-                )) : <div>No one here</div>}
+                )) : <></>}
             </div>
         </div>
     )

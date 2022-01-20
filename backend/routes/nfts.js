@@ -9,7 +9,7 @@ router.get('/populate', async (req, res) => {
   Nft
     .find()
     .populate(["author_id", "owner_id"])
-    .then(ans => res.json(ans))
+    .then(ans => res.status(200).json(ans))
     .catch(err => res.status(500).json(err));
 });
 
@@ -19,7 +19,7 @@ router.get('/populate/:nft_id', async (req, res) => {
   Nft
     .findById(id)
     .populate(["author_id", "owner_id"])
-    .then(ans => res.json(ans))
+    .then(ans => res.status(200).json(ans))
     .catch(err => res.status(500).json(err))
 });
 
@@ -27,7 +27,7 @@ router.get('/', async (req, res) => {
   
   Nft
     .find()
-    .then(ans => res.json(ans))
+    .then(ans => res.status(200).json(ans))
     .catch(err => res.status(500).json(err));
 });
 
@@ -36,7 +36,7 @@ router.get('/:nft_id', async (req, res) => {
 
   Nft
     .findById(id)
-    .then(ans => res.json(ans))
+    .then(ans => res.status(200).json(ans))
     .catch(err => res.status(500).json(err))
 });
 
@@ -59,7 +59,7 @@ router.post('/:author_id', async (req, res) => {
 
   nft
     .save()
-    .then(ans => res.json(ans))
+    .then(ans => res.status(200).json(ans))
     .catch(err => res.status(500).json(err))
 });
 
@@ -68,7 +68,7 @@ router.delete('/:nft_id', async (req, res) => {
 
   Nft
     .findByIdAndDelete(id)
-    .then(ans =>  res.json(ans))
+    .then(ans =>  res.status(200).json(ans))
     .catch(err => res.status(500).json(err))
 });
 
@@ -77,7 +77,7 @@ router.put('/:nft_id', async (req, res) => {
 
   Nft
     .findByIdAndUpdate(id, {...req.body}, {new: true})
-    .then(ans => res.json(ans))
+    .then(ans => res.status(200).json(ans))
     .catch(err => res.status(500).json(err));
 
 });

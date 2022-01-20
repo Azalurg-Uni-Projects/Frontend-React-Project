@@ -5,12 +5,13 @@ import { withRouter } from "react-router";
 import { collectionSchema } from './CollectionSchema';
 import { getCollections } from '../../ducks/collections/selectors';
 import { Link } from "react-router-dom";
-
+import { useTranslation } from "react-i18next";
 
 const CollectionEdit = ({ editCollection, history, collections }, props) => {
 
     let id = window.location.pathname.slice(18)
     const collection = collections.find(collection => collection._id === id)
+    const { t } = useTranslation();
 
     const handleSubmit = (values) => {  
         editCollection(values);
@@ -19,7 +20,7 @@ const CollectionEdit = ({ editCollection, history, collections }, props) => {
 
     return (
         <div>
-            <h3>Edit Collection</h3>
+            <h3>{t("Edit Collection")}</h3>
             <Formik
                 initialValues={collection}
                 onSubmit={(values) => handleSubmit(values)}
@@ -29,17 +30,17 @@ const CollectionEdit = ({ editCollection, history, collections }, props) => {
                 <Form className="Input">
                     <ol className="Left">
                         <li>
-                            <label htmlFor="name">Name: </label>  
+                            <label htmlFor="name">{t("Name")}: </label>  
                             <Field name="name" type="text" id="name"/>  
                             <ErrorMessage name="name" component="p" className='Delete'/> 
                         </li>
                         <li>
-                            <label htmlFor="img_url">Background img url: </label>  
+                            <label htmlFor="img_url">{t("Background img url")}: </label>  
                             <Field name="img_url" type="text" id="img_url"/>  
                             <ErrorMessage name="img_url" component="p" className='Delete'/>
                         </li>
                         <li>
-                            <label htmlFor="url">Source url: </label>  
+                            <label htmlFor="url">{t("Source url")}: </label>  
                             <Field name="url" type="text" id="url"/>  
                             <ErrorMessage name="url" component="p" className='Delete'/> 
                         </li>   
@@ -50,8 +51,8 @@ const CollectionEdit = ({ editCollection, history, collections }, props) => {
                         </li>
                     </ol>
                     <div className="Submit">
-                        <Link to={`/collections/details/${id}`}className="Btn">Back</Link>
-                        <button type="submit" className="Btn">Edit</button>
+                        <Link to={`/collections/details/${id}`}className="Btn">{t("Back")}</Link>
+                        <button type="submit" className="Btn">{t("Edit")}</button>
                     </div>
                 </Form>
             </Formik>

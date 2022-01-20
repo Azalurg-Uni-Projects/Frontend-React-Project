@@ -6,7 +6,7 @@ const Users = require('../models/User');
 router.get('/', async (req, res) => {
   Users
     .find()
-    .then(ans => res.json(ans))
+    .then(ans => res.status(200).json(ans))
     .catch(err => res.status(500).json(err));
 });
 
@@ -15,7 +15,7 @@ router.get('/:user_id', async (req, res) => {
 
   Users
     .findById(id)
-    .then(ans => res.json(ans))
+    .then(ans => res.status(200).json(ans))
     .catch(err => res.status(500).json(err))
 });
 
@@ -39,7 +39,7 @@ router.post('/', async (req, res) => {
 
   user
     .save()
-    .then(ans => res.json(ans))
+    .then(ans => res.status(200).json(ans))
     .catch(err => res.status(500).json(err));
 });
 
@@ -48,7 +48,7 @@ router.delete('/:user_id', async (req, res) => {
   
   Users
     .findByIdAndDelete(id)
-    .then(ans =>  res.json(ans))
+    .then(ans =>  res.status(200).json(ans))
     .catch(err => res.status(500).json(err))
 });
 
@@ -57,7 +57,7 @@ router.put('/:user_id', async (req, res) => {
 
   Users
     .findByIdAndUpdate(id, {...req.body}, {new: true})
-    .then(ans => res.json(ans))
+    .then(ans => res.status(200).json(ans))
     .catch(err => res.status(500).json(err));
 
 });

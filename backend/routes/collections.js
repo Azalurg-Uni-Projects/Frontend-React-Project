@@ -7,7 +7,7 @@ router.get('/', async (req, res) => {
   
   Collection
     .find()
-    .then(ans => res.json(ans))
+    .then(ans => res.status(200).json(ans))
     .catch(err => res.status(500).json(err));
 });
 
@@ -16,7 +16,7 @@ router.get('/:collection_id', async (req, res) => {
 
   Collection
     .findById(id)
-    .then(ans => res.json(ans))
+    .then(ans => res.status(200).json(ans))
     .catch(err => res.status(500).json(err))
 });
 
@@ -43,7 +43,7 @@ router.delete('/:collection_id', async (req, res) => {
   
   Collection
     .findByIdAndDelete(id)
-    .then(ans =>  res.json(ans))
+    .then(ans =>  res.status(200).json(ans))
     .catch(err => res.status(500).json(err))
 });
 
