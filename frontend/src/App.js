@@ -1,4 +1,4 @@
-import './style.scss'
+import './style/style.scss'
 import { Suspense } from 'react';
 import {
   BrowserRouter as Router,
