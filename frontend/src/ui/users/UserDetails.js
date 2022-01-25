@@ -36,10 +36,10 @@ const UserDetails = ({ users, collections, nfts, deleteUser, history } ,props) =
                     <p>{t("phone number")}: {user.phone_number}</p>
                     
                     {created_collections ? 
-                    <div key="random">
+                    <div>
                         {t("created collections")}:
                         {created_collections.map(collection =>(
-                            <p><Link className="Link" to={`/collections/details/${collection._id}`} key={collection._id}> - {collection.name}</Link></p>))}
+                            <p key={collection._id}><Link className="Link" to={`/collections/details/${collection._id}`} key={collection._id}> - {collection.name}</Link></p>))}
 
                     </div> : <> </>}
                     <br/>

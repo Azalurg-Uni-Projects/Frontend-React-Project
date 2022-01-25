@@ -57,3 +57,6 @@ npm-debug.log
 .DS_Store
 
 .env
+
+/.lock
+/.log
